@@ -1,35 +1,7 @@
 import { Component } from '@angular/core';
-const MENU_LIST = [
-  {
-    name: 'Text',
-    icon: 'icon-text',
-    children: [
-      {
-        name: 'Heading 1',
-        icon: '',
-        id: 'h_1'
-      },
-      {
-        name: 'Heading 2',
-        icon: '',
-        id: 'h_2'
-      },
-    ],
-    id: 'text',
-  },
-  {
-    name: 'Button',
-    icon: 'icon-button',
-    id: 'button',
-    children: [
-      {
-        name: 'Add Button',
-        icon: '',
-        id: 'add_button'
-      }
-    ],
-  },
-];
+import { MENU_LIST } from '../services/constant-data';
+import { VideoConfigService } from '../services/video-config.service';
+
 
 @Component({
   selector: 'app-left-sidebar',
@@ -41,7 +13,16 @@ export class LeftSidebarComponent {
   menuList = MENU_LIST;
   selectedMenu: any = '';
 
+  constructor(private video: VideoConfigService) {
+
+  }
+
   setMenuActive(menu: any): void {
     this.selectedMenu = menu;
+  }
+  addElement(elem: any){
+    let val: any = this.video.$selectedElements.value;
+    val.push(elem);
+    this.video.$selectedElements.next(val)
   }
 }

@@ -4,7 +4,8 @@ import { VideoConfigComponent } from './video-config.component';
 import { RightSidebarComponent } from './right-sidebar/right-sidebar.component';
 import { LeftSidebarComponent } from './left-sidebar/left-sidebar.component';
 import { RouterModule, Routes } from '@angular/router';
-import { VideoContComponent } from './video-cont/video-cont.component';
+import { VideoContModule } from './video-cont/video-cont.module';
+import { VideoConfigService } from './services/video-config.service';
 
 let route: Routes = [
   {path: '', component: VideoConfigComponent, pathMatch: 'full'}
@@ -15,11 +16,12 @@ let route: Routes = [
     VideoConfigComponent,
     RightSidebarComponent,
     LeftSidebarComponent,
-    VideoContComponent
   ],
   imports: [
     CommonModule,
-    RouterModule.forChild(route)
-  ]
+    RouterModule.forChild(route),
+    VideoContModule
+  ],
+  providers: [VideoConfigService]
 })
 export class VideoConfigModule { }

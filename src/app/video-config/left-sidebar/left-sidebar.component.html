@@ -9,7 +9,7 @@
     </ul>
     <ul *ngIf="selectedMenu" class="submenu-list">
         <li *ngFor="let child of selectedMenu.children" [class.active]="selectedMenu === child.id">
-          <a>{{ child.name }}</a>
+          <a (click)="addElement(child)">{{ child.name }}</a>
         </li>
       </ul>
   </nav>
