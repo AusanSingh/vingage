@@ -2,9 +2,20 @@
   position: relative;
   width: 600px;
   height: 500px;
+  display: block;
+  &:hover {
+    .vjs-control-bar {
+      visibility: visible !important;
+      opacity: 1 !important;
+      transition: visibility 1s, opacity 1s !important;
+    }
+  }
   .azuremediaplayer {
     .vjs-control-bar {
       z-index: 99;
+      .amp-controlbaricons-right {
+        display: none;
+      }
     }
   }
   #canvas-wrapper {
@@ -35,7 +46,6 @@
         z-index: 1;
         transition: box-shadow 200ms cubic-bezier(0, 0, 0.2, 1);
       }
-
       .overlay-content:hover {
         box-shadow: 0px 1px 15px 7px rgba(153, 163, 174, 0.36);
       }
