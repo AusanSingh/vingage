@@ -46,7 +46,7 @@ export class VideoContComponent {
       controls: true,
       nativeControlsForTouch: true,
       autoplay: false,
-      width: '500',
+      width: '600',
       height: '500',
       // Add other Azure Media Player options as needed
     };
@@ -55,6 +55,7 @@ export class VideoContComponent {
 
     // Load your media source
     const source = {
+      // src: 'https://golustoragetest.blob.core.windows.net/asset-2f22152e-64aa-4d19-8cc1-b45946c2a048/video_2.mp4?se=2024-01-26T16%3A24%3A00Z&sp=r&sv=2023-11-03&sr=b&sig=7nbEuGsbEnJ7fWIHQnA2XJ/6KOBawW7LIHDV/aApLg0%3D',
       src: 'assets/video/video_2.mp4',
       type: 'video/mp4',
     };
@@ -78,6 +79,11 @@ export class VideoContComponent {
     if (this.playerRef) {
       this.playerRef.pause();
     }
+  }
+
+  playVideoAtSpecificTime() {
+    this.playerRef.currentTime(10);
+    this.playerRef.play(); // Optionally, start playing after setting the time
   }
 
   // onCanvasZoom(event) {
@@ -177,6 +183,10 @@ export class VideoContComponent {
     const cdkDrag = $event.source as CdkDrag;
     cdkDrag.reset();
     this.panzoomCanvas.resume();
+  }
+
+  setElementForConfig(_Index: number) {
+    this.video.setElementDataForConfig.next(this.elements[_Index].config)
   }
 
 }

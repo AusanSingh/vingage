@@ -1,0 +1,13 @@
+.configuration-box {
+  display: block;
+  height: 100vh;
+  width: inherit;
+  box-shadow: 0 2px 9px 0 rgba(153, 163, 174, 0.36);
+  background-color: #fff8f8;
+  border-radius: 6px;
+  margin-left: 1px;
+  .configuration-header {
+    opacity: 0.8;
+    padding: 15px;
+  }
+}

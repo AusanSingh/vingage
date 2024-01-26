@@ -7,31 +7,34 @@ export const MENU_LIST = [
         name: 'Heading 1',
         icon: '',
         tag: 'h1',
+        type: 'text',
         config: {
-          font_size: '18px',
+          font_size: 14,
           pos: {
             x: 100,
             y: 100,
           },
-          color: '#000',
+          color: '#fff',
           start_time: 0,
           end_time: 10,
-          text: 'Sample'
+          text: 'Heading 1'
         }
       },
       {
         name: 'Heading 2',
         icon: '',
         tag: 'h2',
+        type: 'text',
         config: {
-          font_size: '18px',
+          font_size: 12,
           pos: {
             x: 100,
             y: 150,
           },
-          color: '#000',
+          color: '#fff',
           start_time: 0,
-          end_time: 10
+          end_time: 10,
+          text: 'Heading 2'
         }
       },
     ],
@@ -45,15 +48,17 @@ export const MENU_LIST = [
         name: 'Add Button',
         icon: '',
         tag: 'button',
+        type: 'button',
         config: {
-          font_size: '18px',
+          font_size: 12,
           pos: {
             x: 100,
             y: 200,
           },
-          color: '#000',
+          color: '#fff',
           start_time: 0,
-          end_time: 10
+          end_time: 10,
+          text: 'Button'
         }
       }
     ],

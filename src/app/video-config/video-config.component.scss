@@ -1,14 +1,19 @@
 .main-container {
+  display: flex;
+  height: 100vh;
+  .left-sidebar {
+    flex-grow: 0;
+    width: 250px;
+  }
+  .video-cont {
+    flex-grow: 1;
     display: flex;
-    .left-sidebar {
-        flex-grow: 0;
-        width: 300px;
-    }
-    .video-cont {
-        flex-grow: 1;
-    }
-    .right-sidebar {
-        width: 300px;
-        flex-grow: 0;
-    }
+    justify-content: center;
+    background: #dad6d6;
+    position: relative;
+  }
+  .right-sidebar {
+    width: 300px;
+    flex-grow: 0;
+  }
 }
