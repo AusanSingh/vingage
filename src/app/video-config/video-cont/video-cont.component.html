@@ -1,11 +1,20 @@
-{{elements|json}}
+<div class="container d-flex align-items-center justify-content-center">
+    <button (click)="pauseVideo()">Pause Video</button>
+    <button (click)="playVideo()">Play Video</button>
 
-<video 
-    id="vid1" 
-    class="azuremediaplayer amp-default-skin" 
-    autoplay controls width="640" height="400" 
-    poster="poster.jpg" >
-    <p class="amp-no-js">
-        To view this video please enable JavaScript, and consider upgrading to a web browser that supports HTML5 video
-    </p>
-</video>
+    <div class="parent-div">
+        <div id="azuremediaplayer" class="azuremediaplayer amp-default-skin"></div>
+        <div id="canvas-wrapper">
+            <div #canvas class="canvas-container">
+                <!-- (wheel)="onCanvasZoom($event)" [ngStyle]="{ transform: 'scale(' + zoomScale + ')' }" -->
+                <div cdkDragBoundary=".canvas-container" *ngFor="let item of elements;let i = index"
+                    class="overlay-content" id="{{i}}"
+                    [ngStyle]="{ left: item.config.pos.x + 'px', top: item.config.pos.y + 'px' }" cdkDrag
+                    (cdkDragStarted)="startDragging($event,i)" (cdkDragEnded)="endDragging($event,i)"
+                    [cdkDragFreeDragPosition]="item?.config?.pos">
+                    {{item?.config.text}}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

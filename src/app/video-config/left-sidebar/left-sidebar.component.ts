@@ -20,9 +20,10 @@ export class LeftSidebarComponent {
   setMenuActive(menu: any): void {
     this.selectedMenu = menu;
   }
-  addElement(elem: any){
+  addElement(elem: any) {
     let val: any = this.video.$selectedElements.value;
-    val.push(elem);
+    elem["id"] = val.length;
+    val.push(JSON.parse(JSON.stringify(elem)));
     this.video.$selectedElements.next(val)
   }
 }
