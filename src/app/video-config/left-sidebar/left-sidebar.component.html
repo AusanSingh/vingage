@@ -1,0 +1,16 @@
+<nav class="sidebar">
+    <ul class="menu-list">
+      <li *ngFor="let item of menuList" [class.active]="selectedMenu.id === item.id" class="menu-item">
+        <a (click)="setMenuActive(item)">
+          <span class="{{ item.icon }}"></span>
+          {{ item.name }}
+        </a>
+      </li>
+    </ul>
+    <ul *ngIf="selectedMenu" class="submenu-list">
+        <li *ngFor="let child of selectedMenu.children" [class.active]="selectedMenu === child.id">
+          <a>{{ child.name }}</a>
+        </li>
+      </ul>
+  </nav>
+  

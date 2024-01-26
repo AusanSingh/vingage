@@ -1,0 +1,14 @@
+.pages{
+    &__container{
+        position: relative;
+        transition: 0.5s;
+        margin-top: calc(var(--sa-headerHeight) + 8px);
+        padding: 0 20px;
+        @media screen and (min-width:1025px){
+            padding-left: calc(var(--sa-navWidth) + 20px);
+            padding-right: 20px;
+            margin-top: calc(var(--sa-headerHeight) + 10px);
+        }
+    }
+}
+

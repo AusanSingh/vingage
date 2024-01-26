@@ -1,0 +1,44 @@
+.header{
+    box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.05);
+    height: var(--sa-headerHeight);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+    position: fixed;
+    z-index: 999;
+    width: 100%;
+    top: 0;
+    left: 0;
+    &__left{
+        .display_heading{
+            padding-left: calc(175px + 0.75rem);
+            transition: 0.5s;
+        }
+    }
+    &__right{
+        .user{
+            &__icon{
+                background-color: var(--sa-gray);
+                height: 36px;
+                width: 36px;
+                color: #000;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            &__dropdown{
+                right: 0 !important;
+                left: auto !important;
+                top: calc(38px + 0.5rem) !important;
+                box-shadow: 0 0 20px rgba(0,0,0,0.08);
+                font-size: var(--sa-fontSize);
+                a{
+                    padding: 0.5rem 1rem;
+                    i{
+                        padding-right: 5px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+

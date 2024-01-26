@@ -1,0 +1,30 @@
+
+<nav class="bg-white sidebar vh-100" [ngClass]="{'min_width_toggle': closeSidebar || openSidebar}" #menu>
+    <button class="sidebar__togglebtn d-none d-xl-block" (click)="toggleSidebar()"><span class="icon-left-arrow sidebar__togglebtn__open" [ngClass]="closeSidebar ? 'sidebar__togglebtn__collapse':''"><i class="icon-right-arrow" style="transform: rotate(90deg);"></i> </span></button>
+    <div class="d-flex justify-content-between d-xl-none align-items-center sidebar__header">
+        <div class="logo">
+            <a class="navbar-brand d-inline-block p-0 m-0" href="#">
+                <img src="/assets/icons/logo.svg" alt="Surbo Bot Analytics"/>
+            </a>
+        </div>
+        <div class="close_sidebar">
+            <i class="fa fa-times" (click)="closeMenu()"></i>
+        </div>
+    </div>
+    <ul class="navbar-nav sidebar__container">
+        <ng-container *ngFor="let menu of menuItems">
+            <li class="nav-item" [attr.aria-expanded]="" aria-controls="collapseBasic">
+                <a class="nav-link sidebar__link position-relative" (click)="submenuToggle(menu);" [routerLinkActive]="['active']"  [routerLinkActiveOptions]="{exact: false}" [routerLink]="[menu['route']]"><span class="sidebar__icon" [ngClass]="[menu['icon']]"></span><span [ngClass]="closeSidebar?'d-none':''">{{menu['name']}}</span>
+                <i class="fa submenu__icon position-absolute" [ngClass]="menu.isCollapsed ? 'fa-caret-right' : 'fa-caret-down'" *ngIf="menu.children && !closeSidebar"></i>
+                </a>
+            
+                <!-- <ul class="navbar-nav submenu__container" id="collapseBasic" [collapse]="menu.isCollapsed || false" [isAnimated]="true" *ngIf="menu.children">
+                    <ng-container *ngFor="let submenu of menu.children">
+                        <li class="nav-item"><a class="nav-link submenu__link" [routerLinkActive]="['active']" [routerLink]="[submenu['route']]" (click)="closeMenu()">{{submenu['name']}}</a></li>
+                    </ng-container>
+                </ul>                 -->
+            </li>
+        </ng-container>
+    </ul>
+</nav>
+<div class="overlay" *ngIf="openSidebar" (click) = "closeMenu()"></div>

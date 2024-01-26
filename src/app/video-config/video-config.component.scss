@@ -1,0 +1,14 @@
+.main-container {
+    display: flex;
+    .left-sidebar {
+        flex-grow: 0;
+        width: 300px;
+    }
+    .video-cont {
+        flex-grow: 1;
+    }
+    .right-sidebar {
+        width: 300px;
+        flex-grow: 0;
+    }
+}
