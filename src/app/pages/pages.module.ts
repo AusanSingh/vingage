@@ -13,16 +13,28 @@ const routes: Routes = [
     path: '',
     component: PagesComponent,
     children: [
-      { path: '', redirectTo: 'video', pathMatch: 'full' },
+      { path: '', redirectTo: 'template', pathMatch: 'full' },
       {
-        path: 'video',
-        loadChildren: () => import('./video/video.module').then(m => m.VideoModule),
-        data: { page_title: "Video" },
+        path: 'dashboard',
+        loadChildren: () => import('./dashboard/dashboard.module').then(m => m.DashboardModule),
+        data: { page_title: "Dashboard" },
+        // canActivate: [AuthGuard]
+      },
+      {
+        path: 'template',
+        loadChildren: () => import('./template/template.module').then(m => m.TemplateModule),
+        data: { page_title: "Template" },
+        // canActivate: [AuthGuard]
+      },
+      {
+        path: 'campaign',
+        loadChildren: () => import('./campaign/campaign.module').then(m => m.CampaignModule),
+        data: { page_title: "Campaign" },
         // canActivate: [AuthGuard]
       }
     ],
   },
-  { path: '', redirectTo: 'video', pathMatch: 'full'}
+  { path: '', redirectTo: 'dashbaord', pathMatch: 'full'}
 ]   
 
 

@@ -1,62 +1,37 @@
 <!-- <app-loader *ngIf="isLoading"></app-loader> -->
 <nav class="navbar bg-white header d-none d-xl-block">
-  <div class="container-fluid">
+  <div class="container-fluid align-items-center">
     <div class="header__left logo">
       <a class="navbar-brand d-inline-block p-0 m-0" href="#">
-        <img src="assets/icons/logo.svg" height="34" alt="Surbo logo"/>
+        <img src="assets/images/logo.svg" height="26" alt="Vingage" />
       </a>
       <h2 class="m-0 d-inline-block fw-normal display_heading">{{headTitle|| ""}}</h2>
     </div>
     <div class="header__right user btn-group" dropdown>
-      <button id="user-dropdown" dropdownToggle type="button" class="btn btn-primary rounded-circle border-0 p-0 user__icon text-uppercase" aria-controls="user-dropdown-area">{{circleName}}<span class="caret"></span>
-      </button>
-      <ul id="user-dropdown-area" *dropdownMenu class="dropdown-menu border-0 user__dropdown p-0"
-          role="menu" aria-labelledby="user-dropdown">
-          <li role="menuitem">
-            <a class="dropdown-item"><i class="ico icon-Profile"></i> {{user?.email}}</a>
-          </li>
-        <li *ngFor = "let nav of userDropdown" role="menuitem">
-          <a class="dropdown-item" [routerLink]="[nav['route']]"><i class="fa fa-{{nav['icon']}}"></i> {{nav['name']}}</a>
-        </li>
-        <li role="menuitem" (click) = "logout($event)">
-          <a class="dropdown-item" href="#"><i class="icon icon-logout"></i> Logout</a>
-        </li>
-      </ul>
+      <div class=" text-end me-3">
+        <a class="btn btn-sm btn-primary" routerLink="/video/create"> Create Template</a>
     </div>
-  </div>
-</nav>
-
-<div class="d-xl-none">
-<nav class="navbar bg-white header header__mobile">
-    <div class="container-fluid">
-      <div class="header__mobile__menu">
-        <a class="text-decoration-none icon-menu color-primary" (click)="showSidebar()"></a>
-      </div>
-      <div class="logo">
-        <a class="navbar-brand d-inline-block p-0 m-0" href="#">
-          <img src="assets/icons/logo.svg" alt="Surbo Bot Analytics"/>
-        </a>
-      </div>
-      <div class="header__right user btn-group" dropdown>
-        <button id="user-dropdown" dropdownToggle type="button" class="btn btn-primary rounded-circle border-0 p-0 user__icon text-uppercase" aria-controls="user-dropdown">{{circleName}}<span class="caret"></span>
+      <div>
+        <button id="user-dropdown" dropdownToggle type="button" class="btn btn-primary rounded-circle border-0 p-0 user__icon text-uppercase" aria-controls="user-dropdown-area">{{circleName}}<span class="caret"></span>
         </button>
-        <ul id="user-dropdown" *dropdownMenu class="dropdown-menu border-0 user__dropdown p-0"
+        <ul id="user-dropdown-area" *dropdownMenu class="dropdown-menu border-0 user__dropdown p-0"
             role="menu" aria-labelledby="user-dropdown">
             <li role="menuitem">
-              <a class="dropdown-item text-capitalize"><i class="icon icon-Profile"></i> {{user.username}} </a>
+              <a class="dropdown-item"><i class="ico icon-Profile"></i> {{user?.email}}</a>
             </li>
           <li *ngFor = "let nav of userDropdown" role="menuitem">
             <a class="dropdown-item" [routerLink]="[nav['route']]"><i class="fa fa-{{nav['icon']}}"></i> {{nav['name']}}</a>
           </li>
           <li role="menuitem" (click) = "logout($event)">
-            <a class="dropdown-item"><i class="icon icon-logout"></i> Logout</a>
+            <a class="dropdown-item" href="#"><i class="icon icon-logout"></i> Logout</a>
           </li>
-        </ul>     
+        </ul>
       </div>
     </div>
+  </div>
 </nav>
-<app-sidebar [openSidebar]=openSidebar (sideBarStatus) = "openSidebar = $event"></app-sidebar>
-</div>
+
+
 
 
 
