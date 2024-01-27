@@ -16,13 +16,16 @@ export class VideoContComponent {
   zoomFactor = 0.05;
   panzoomCanvas: any = null;
   playerRef: any;
+  slctdEvent: any;
 
   @ViewChild('canvas') canvasElement: ElementRef | any;
   elements: any = [];
   constructor(private video: VideoConfigService, private elementRef: ElementRef) {
     this.video.$selectedElements.subscribe(elem => {
       this.elements = elem;
-      console.log(this.elements)
+    })
+    video.slctdEvent.subscribe(res => {
+      this.slctdEvent = res;
     })
   }
 
@@ -46,8 +49,8 @@ export class VideoContComponent {
       controls: true,
       nativeControlsForTouch: true,
       autoplay: false,
-      width: '600',
-      height: '500',
+      width: '607',
+      height: '391',
       // Add other Azure Media Player options as needed
     };
 

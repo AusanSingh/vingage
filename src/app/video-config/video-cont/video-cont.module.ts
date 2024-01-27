@@ -9,7 +9,7 @@ import { DragDropModule } from '@angular/cdk/drag-drop';
   ],
   imports: [
     CommonModule,
-    DragDropModule
+    DragDropModule,
   ],
   exports: [VideoContComponent]
 })

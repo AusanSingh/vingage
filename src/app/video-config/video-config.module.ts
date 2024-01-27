@@ -7,6 +7,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { VideoContModule } from './video-cont/video-cont.module';
 import { VideoConfigService } from './services/video-config.service';
 import { DragDropModule } from '@angular/cdk/drag-drop';
+import { VideoConfigHeaderComponent } from './video-config-header/video-config-header.component';
 
 
 let route: Routes = [
@@ -18,6 +19,7 @@ let route: Routes = [
     VideoConfigComponent,
     RightSidebarComponent,
     LeftSidebarComponent,
+    VideoConfigHeaderComponent,
   ],
   imports: [
     CommonModule,

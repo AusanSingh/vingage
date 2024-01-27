@@ -1,10 +1,10 @@
-<div class="container d-flex align-items-center justify-content-center">
-    <div
+<div class="container d-flex align-items-center justify-content-center mar-t-38 flex-column">
+    <!-- <div
         style="display: flex;align-items: center;justify-content: center;flex-direction: column; position: absolute;left: 0">
         <button class="btn btn-primary mb-2" (click)="playVideo()">Play Video</button>
         <button class="btn btn-primary mb-2" (click)="pauseVideo()">Pause Video</button>
         <button class="btn btn-primary" (click)="playVideoAtSpecificTime()">Play Video at Specific Point</button>
-    </div>
+    </div> -->
 
     <div class="parent-div">
         <div id="azuremediaplayer" class="azuremediaplayer amp-default-skin"></div>
@@ -24,4 +24,5 @@
             </div>
         </div>
     </div>
+    <img src="assets/images/video-config/button-disclaimer.svg" class="mar-t-35" *ngIf="slctdEvent == 'button'">
 </div>

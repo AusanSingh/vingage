@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="37" height="39.5" viewBox="0 0 37 39.5">
+    <g data-name="Group 60297">
+        <g data-name="Group 60296">
+            <text transform="translate(0 35.5)" style="fill:#fff;font-size:12px;font-family:OpenSans-Light,Open Sans;font-weight:300"><tspan x="0" y="0">Button</tspan></text>
+            <path d="M6.685 12.815V10.87m0 0V4.389a1.3 1.3 0 1 1 2.593 0v5.185h4.346a2.135 2.135 0 0 1 2.135 2.135v1.106a5.833 5.833 0 0 1-5.833 5.833h-.648a5.185 5.185 0 0 1-5.185-5.185 2.593 2.593 0 0 1 2.592-2.593zm4.537-3.889h2.593a3.241 3.241 0 0 0 0-6.481H4.741a3.241 3.241 0 1 0 0 6.481" transform="translate(9)" style="fill:none;stroke:#fff"/>
+        </g>
+    </g>
+</svg>

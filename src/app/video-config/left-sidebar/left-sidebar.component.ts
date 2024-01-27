@@ -12,13 +12,13 @@ import { VideoConfigService } from '../services/video-config.service';
 export class LeftSidebarComponent {
   menuList = MENU_LIST;
   selectedMenu: any = '';
-
   constructor(private video: VideoConfigService) {
 
   }
 
   setMenuActive(menu: any): void {
     this.selectedMenu = menu;
+    this.video.slctdEvent.next(menu.type)
   }
   addElement(elem: any) {
     let val: any = this.video.$selectedElements.value;

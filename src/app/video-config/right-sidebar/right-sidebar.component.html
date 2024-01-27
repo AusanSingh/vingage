@@ -1,8 +1,26 @@
 <div class="configuration-box">
-    <div class="configuration-header">
-        <h5 class="m-0">Configuration</h5>
-    </div>
-    <div class="configuration-body">
-        <pre class="mb-0" *ngIf="element" [innerHTML]="element | json"></pre>
-    </div>
+    <ng-container *ngIf="allElements.length">
+        <div class="configuration-header">
+            <ul>
+                <li class="mar-r-40" [ngClass]="{'active': activeTabIndex === 1}" (click)="activeTab(1)"
+                    *ngIf="element">
+                    <a href="javascript:void(0)">
+                        Properties</a>
+                </li>
+                <li [ngClass]="{'active': activeTabIndex === 2 || (allElements.length && !element)}"
+                    (click)="activeTab(2)">
+                    <a href="javascript:void(0)"> All
+                        Elements({{allElements.length}})</a>
+                </li>
+            </ul>
+        </div>
+        <div class="configuration-body">
+            <ng-container *ngIf="activeTabIndex === 1">
+                <pre class="mb-0" *ngIf="element" [innerHTML]="element | json"></pre>
+            </ng-container>
+            <ng-container *ngIf="activeTabIndex === 2 || (allElements.length && !element)">
+                <pre class="mb-0" *ngIf="allElements.length" [innerHTML]="allElements | json"></pre>
+            </ng-container>
+        </div>
+    </ng-container>
 </div>

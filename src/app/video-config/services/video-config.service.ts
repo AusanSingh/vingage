@@ -5,6 +5,7 @@ import { BehaviorSubject, Subject } from "rxjs";
 export class VideoConfigService {
     $selectedElements = new BehaviorSubject([]);
     setElementDataForConfig = new Subject();
+    slctdEvent = new Subject();
     constructor() {
 
     }

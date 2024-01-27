@@ -1,15 +1,15 @@
 <nav class="sidebar">
   <ul class="menu-list">
-    <li *ngFor="let item of menuList" [class.active]="selectedMenu.id === item.id" class="menu-item">
+    <li *ngFor="let item of menuList" [class.active]="selectedMenu.type === item.type" class="menu-item">
       <a (click)="setMenuActive(item)">
-        <span class="{{ item.icon }}"></span>
-        {{ item.name }}
+        <img src="assets/images/video-config/{{ item.icon }}.svg">
       </a>
     </li>
   </ul>
   <ul *ngIf="selectedMenu" class="submenu-list cursor-pointer">
-    <li *ngFor="let child of selectedMenu.children" [class.active]="selectedMenu === child.id">
-      <a (click)="addElement(child)">{{ child.name }}</a>
+    <p class="f-size-12">Click text to add to page</p>
+    <li *ngFor="let child of selectedMenu.children">
+      <a (click)="addElement(child)" [ngStyle]="{'font-size':child.config.font_size+'px'}">{{ child.name }}</a>
     </li>
   </ul>
 </nav>

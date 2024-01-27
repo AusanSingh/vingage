@@ -1,7 +1,7 @@
 .parent-div {
   position: relative;
-  width: 600px;
-  height: 500px;
+  width: 607px;
+  height: 391px;
   display: block;
   &:hover {
     .vjs-control-bar {
@@ -16,6 +16,9 @@
       .amp-controlbaricons-right {
         display: none;
       }
+    }
+    .amp-logo {
+      display: none;
     }
   }
   #canvas-wrapper {

@@ -2,12 +2,40 @@
   display: block;
   height: 100vh;
   width: inherit;
-  box-shadow: 0 2px 9px 0 rgba(153, 163, 174, 0.36);
-  background-color: #fff8f8;
-  border-radius: 6px;
+  background-color: #18191a;
   margin-left: 1px;
+  color: #cccaca;
   .configuration-header {
-    opacity: 0.8;
-    padding: 15px;
+    padding: 17px 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    ul {
+      display: inline-flex;
+      li {
+        display: flex;
+        flex-direction: column;
+        &.active {
+          a {
+            color: #ffffff;
+          }
+          &::after {
+            width: 39px;
+            border-bottom: 1px solid #ffffff;
+            content: "";
+            height: 5px;
+            margin-left: 10px;
+          }
+        }
+        a {
+          text-decoration: none;
+          color: #cccaca;
+        }
+      }
+    }
+  }
+  .configuration-body {
+    overflow-y: auto;
+    max-height: 80vh;
   }
 }

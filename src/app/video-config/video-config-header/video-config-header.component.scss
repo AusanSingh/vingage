@@ -1,0 +1,20 @@
+.config-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  .go-back {
+  }
+  .template-name {
+  }
+  .template-btn {
+    .btn {
+      height: 32px;
+    }
+  }
+  .mgn-r-12 {
+    margin-right: 12px;
+  }
+  .mgn-r-120 {
+    margin-right: 120px;
+  }
+}

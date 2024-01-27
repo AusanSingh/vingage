@@ -1,19 +1,33 @@
 .main-container {
-  display: flex;
   height: 100vh;
-  .left-sidebar {
-    flex-grow: 0;
-    width: 250px;
+  overflow: hidden;
+  .video-config-header {
+    height: 50px;
+    padding: 10px 30px 8px 25px;
+    background-color: #fff;
+    position: fixed;
+    width: 100%;
+    z-index: 9;
+    top: 0;
   }
-  .video-cont {
-    flex-grow: 1;
+  .video-config-content {
     display: flex;
-    justify-content: center;
-    background: #dad6d6;
     position: relative;
-  }
-  .right-sidebar {
-    width: 300px;
-    flex-grow: 0;
+    top: 50px;
+    .left-sidebar {
+      flex-grow: 0;
+      width: 311px;
+    }
+    .video-cont {
+      flex-grow: 1;
+      display: flex;
+      justify-content: center;
+      background: #f8faff;
+      position: relative;
+    }
+    .right-sidebar {
+      width: 300px;
+      flex-grow: 0;
+    }
   }
 }
