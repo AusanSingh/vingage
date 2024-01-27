@@ -15,6 +15,7 @@
       li {
         display: flex;
         flex-direction: column;
+        align-items: center;
         &.active {
           a {
             color: #ffffff;
@@ -24,7 +25,6 @@
             border-bottom: 1px solid #ffffff;
             content: "";
             height: 5px;
-            margin-left: 10px;
           }
         }
         a {
@@ -37,5 +37,24 @@
   .configuration-body {
     overflow-y: auto;
     max-height: 80vh;
+    .added-elements {
+      height: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin: 0 18px;
+      border-bottom: 1px solid rgb(255 255 255 / 20%);
+      .element-text {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        max-width: 140px;
+      }
+      .actions {
+        img {
+          margin: 0px 8px;
+        }
+      }
+    }
   }
 }

@@ -19,7 +19,17 @@
                 <pre class="mb-0" *ngIf="element" [innerHTML]="element | json"></pre>
             </ng-container>
             <ng-container *ngIf="activeTabIndex === 2 || (allElements.length && !element)">
-                <pre class="mb-0" *ngIf="allElements.length" [innerHTML]="allElements | json"></pre>
+                <div *ngFor="let item of allElements;let i =index">
+                    <div class="added-elements">
+                        <span><img src="assets/images/video-config/icons/icon-{{item.type}}.svg"></span>
+                        <span class="element-text" title="{{item?.config?.text}}">{{item?.config?.text}}</span>
+                        <span class="actions">
+                            <img class="cursor-pointer" src="assets/images/video-config/delete.svg"
+                                (click)="deleteElement(i)">
+                            <img class="cursor-pointer" src="assets/images/video-config/edit.svg">
+                        </span>
+                    </div>
+                </div>
             </ng-container>
         </div>
     </ng-container>
