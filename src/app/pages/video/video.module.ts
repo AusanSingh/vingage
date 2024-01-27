@@ -6,21 +6,21 @@ import { RouterModule, Routes } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RemoveUnderscorePipe } from 'src/app/shared/pipes/string.pipes';
 
-let routes:Routes = [
+let routes: Routes = [
   {
-    path:'create',
+    path: 'create',
     component: CreateAndUpdateComponent, pathMatch: 'full'
   },
   {
-    path:':video-id/setting',
+    path: ':video-id/setting',
     component: CreateAndUpdateComponent, pathMatch: 'full'
   },
   {
-    path:'list',
+    path: 'list',
     component: ListComponent, pathMatch: 'full'
   },
   {
-    path:'', pathMatch: 'full', redirectTo: 'list'
+    path: '', pathMatch: 'full', redirectTo: 'list'
   }
 ]
 

@@ -1,56 +1,66 @@
 export const MENU_LIST = [
-    {
-      name: 'Text',
-      icon: 'icon-text',
-      children: [
-        {
-          name: 'Heading 1',
-          icon: '',
-          id: 'h_1',
-          config: {
-            font_size: '18px',
-            left: '100px',
-            top: '10px',
-            color: '#000',
-            start_time: 0,
-            end_time: 10,
-            text:'Sample'
-          }
-        },
-        {
-          name: 'Heading 2',
-          icon: '',
-          id: 'h_2',
-          config: {
-            font_size: '18px',
-            left: '100px',
-            top: '10px',
-            color: '#000',
-            start_time: 0,
-            end_time: 10
-          }
-        },
-      ],
-      id: 'text',
-    },
-    {
-      name: 'Button',
-      icon: 'icon-button',
-      id: 'button',
-      children: [
-        {
-          name: 'Add Button',
-          icon: '',
-          id: 'add_button',
-          config: {
-            font_size: '18px',
-            left: '100px',
-            top: '10px',
-            color: '#000',
-            start_time: 0,
-            end_time: 10
-          }
+  {
+    name: 'Text',
+    icon: 'icon-text',
+    children: [
+      {
+        name: 'Heading 1',
+        icon: '',
+        tag: 'h1',
+        type: 'text',
+        config: {
+          font_size: 14,
+          pos: {
+            x: 100,
+            y: 100,
+          },
+          color: '#fff',
+          start_time: 0,
+          end_time: 10,
+          text: 'Heading 1'
         }
-      ],
-    },
-  ];
+      },
+      {
+        name: 'Heading 2',
+        icon: '',
+        tag: 'h2',
+        type: 'text',
+        config: {
+          font_size: 12,
+          pos: {
+            x: 100,
+            y: 150,
+          },
+          color: '#fff',
+          start_time: 0,
+          end_time: 10,
+          text: 'Heading 2'
+        }
+      },
+    ],
+    id: 'text',
+  },
+  {
+    name: 'Button',
+    icon: 'icon-button',
+    children: [
+      {
+        name: 'Add Button',
+        icon: '',
+        tag: 'button',
+        type: 'button',
+        config: {
+          font_size: 12,
+          pos: {
+            x: 100,
+            y: 200,
+          },
+          color: '#fff',
+          start_time: 0,
+          end_time: 10,
+          text: 'Button'
+        }
+      }
+    ],
+  },
+];

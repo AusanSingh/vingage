@@ -1,1 +1,8 @@
-<p>right-sidebar works!</p>
+<div class="configuration-box">
+    <div class="configuration-header">
+        <h5 class="m-0">Configuration</h5>
+    </div>
+    <div class="configuration-body">
+        <pre class="mb-0" *ngIf="element" [innerHTML]="element | json"></pre>
+    </div>
+</div>

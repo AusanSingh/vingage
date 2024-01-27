@@ -1,12 +1,27 @@
-{{elements|json}}
+<div class="container d-flex align-items-center justify-content-center">
+    <div
+        style="display: flex;align-items: center;justify-content: center;flex-direction: column; position: absolute;left: 0">
+        <button class="btn btn-primary mb-2" (click)="playVideo()">Play Video</button>
+        <button class="btn btn-primary mb-2" (click)="pauseVideo()">Pause Video</button>
+        <button class="btn btn-primary" (click)="playVideoAtSpecificTime()">Play Video at Specific Point</button>
+    </div>
 
-<video 
-    id="vid1" 
-    class="azuremediaplayer amp-default-skin" 
-    autoplay controls width="640" height="400" 
-    src="https://golustoragetest.blob.core.windows.net/asset-2f22152e-64aa-4d19-8cc1-b45946c2a048/video_2.mp4?se=2024-01-26T16%3A24%3A00Z&sp=r&sv=2023-11-03&sr=b&sig=7nbEuGsbEnJ7fWIHQnA2XJ/6KOBawW7LIHDV/aApLg0%3D"
-    >
-    <p class="amp-no-js">
-        To view this video please enable JavaScript, and consider upgrading to a web browser that supports HTML5 video
-    </p>
-</video>
+    <div class="parent-div">
+        <div id="azuremediaplayer" class="azuremediaplayer amp-default-skin"></div>
+        <div id="canvas-wrapper">
+            <div #canvas class="canvas-container">
+                <!-- (wheel)="onCanvasZoom($event)" [ngStyle]="{ transform: 'scale(' + zoomScale + ')' }" -->
+                <div cdkDragBoundary=".canvas-container" *ngFor="let item of elements;let i = index"
+                    class="overlay-content" id="{{i}}" [ngStyle]="{ 
+                        'left': item.config.pos.x + 'px', 
+                        'top': item.config.pos.y + 'px', 
+                        'color': item.config.color,
+                        'font-size': item.config.font_size + 'px',
+                        }" cdkDrag (cdkDragStarted)="startDragging($event,i)" (cdkDragEnded)="endDragging($event,i)"
+                    [cdkDragFreeDragPosition]="item?.config?.pos" (click)="setElementForConfig(i)">
+                    {{item?.config.text}}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -19,7 +19,7 @@ import { HttpInterceptorService } from './shared/services/http-interceptor.servi
     HttpClientModule,
     BrowserAnimationsModule,
     ModalModule.forRoot(),
-    ToastrModule.forRoot()
+    ToastrModule.forRoot(),
   ],
   providers: [
     {

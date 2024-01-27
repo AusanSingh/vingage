@@ -6,9 +6,11 @@ import { LeftSidebarComponent } from './left-sidebar/left-sidebar.component';
 import { RouterModule, Routes } from '@angular/router';
 import { VideoContModule } from './video-cont/video-cont.module';
 import { VideoConfigService } from './services/video-config.service';
+import { DragDropModule } from '@angular/cdk/drag-drop';
+
 
 let route: Routes = [
-  {path: '', component: VideoConfigComponent, pathMatch: 'full'}
+  { path: '', component: VideoConfigComponent, pathMatch: 'full' }
 ]
 
 @NgModule({
