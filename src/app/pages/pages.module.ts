@@ -6,7 +6,6 @@ import { HeaderModule } from '../shared/modules/header/header.module';
 import { SidebarModule } from '../shared/modules/sidebar/sidebar.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AuthGuard } from '../shared/services/auth-guard.service';
-import { ROUTE_ID } from '../shared/models/global.constant';
 
 
 const routes: Routes = [
@@ -18,7 +17,7 @@ const routes: Routes = [
       {
         path: 'video',
         loadChildren: () => import('./video/video.module').then(m => m.VideoModule),
-        data: { page_title: "Video", id: ROUTE_ID['video'] },
+        data: { page_title: "Video" },
         // canActivate: [AuthGuard]
       }
     ],

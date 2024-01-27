@@ -1,7 +1,7 @@
 import { Component, OnInit,Input, Output, EventEmitter, NgModule  } from '@angular/core';
 import { AuthenticationService } from '../../services/authentication.service';
 import { NavLinks } from '../../models/navlinks.model';
-import { MENU_LIST, USER_PAGES, ADMIN_PAGES } from '../../models/global.constant';
+import { MENU_LIST } from '../../models/global.constant';
 
 @Component({
   selector: 'app-sidebar',

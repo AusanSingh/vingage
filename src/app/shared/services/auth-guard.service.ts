@@ -3,14 +3,12 @@ import { ActivatedRouteSnapshot, RouterStateSnapshot, Router } from '@angular/ro
 import { AuthenticationService } from './authentication.service';
 import { take, map } from 'rxjs/operators';
 import { Observable } from 'rxjs';
-import { ADMIN_PAGES, USER_PAGES } from '../models/global.constant';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthGuard {
-  adminPages=ADMIN_PAGES;
-  userPages=USER_PAGES;
+
 
   constructor(
     private _auth: AuthenticationService,
