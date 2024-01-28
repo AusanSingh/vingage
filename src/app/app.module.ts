@@ -7,6 +7,7 @@ import { ModalModule } from 'ngx-bootstrap/modal';
 import { ToastrModule } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpInterceptorService } from './shared/services/http-interceptor.service';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -20,6 +21,7 @@ import { HttpInterceptorService } from './shared/services/http-interceptor.servi
     BrowserAnimationsModule,
     ModalModule.forRoot(),
     ToastrModule.forRoot(),
+    FormsModule, //for template driven
   ],
   providers: [
     {

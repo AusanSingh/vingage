@@ -13,7 +13,7 @@ export class LeftSidebarComponent {
   menuList = MENU_LIST;
   selectedMenu: any = '';
   constructor(private video: VideoConfigService) {
-
+    this.selectedMenu = this.menuList[0];
   }
 
   setMenuActive(menu: any): void {

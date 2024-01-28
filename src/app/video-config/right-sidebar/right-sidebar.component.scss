@@ -37,12 +37,12 @@
   .configuration-body {
     overflow-y: auto;
     max-height: 80vh;
+    padding: 3px 20px;
     .added-elements {
       height: 50px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      margin: 0 18px;
       border-bottom: 1px solid rgb(255 255 255 / 20%);
       .element-text {
         white-space: nowrap;

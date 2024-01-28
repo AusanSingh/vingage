@@ -1,0 +1,83 @@
+<!-- <pre class="mb-0" *ngIf="element" [innerHTML]="element | json"></pre> -->
+<div class="properties text-configuration">
+    <label class="mb-3 f-size-14">Text Configurations</label>
+    <div class="col mb-3">
+        <div class="form-group">
+            <label>Text Name</label>
+            <input class="form-control mar-b-4" type="text" name="textname" [(ngModel)]="element.text"
+                placeholder="Enter name" />
+            <span class="f-size-10">{{sublabel}}</span>
+        </div>
+    </div>
+    <div class="col mb-3">
+        <div class="form-group">
+            <label class="light-grey">Set time to display</label>
+            <div class="row">
+                <div class="col-6">
+                    <label>Start time</label>
+                    <input class="form-control mar-b-4" appNumberOnly type="text" name="starttime"
+                        [(ngModel)]="element.duration.start" placeholder="Enter start time" />
+                </div>
+                <div class="col-6">
+                    <label>End time</label>
+                    <input class="form-control mar-b-4" appNumberOnly type="text" name="endtime"
+                        [(ngModel)]="element.duration.end" placeholder="Enter end time" />
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="divider"></div>
+</div>
+<div class="properties component-styling">
+    <label class="mb-3 f-size-14">Component Styling</label>
+    <div class="col mb-3">
+        <div class="form-group">
+            <label class="light-grey">Text</label>
+            <div class="row">
+                <div class="col-12 mb-1">
+                    <label>Font Family</label>
+                    <input class="form-control mar-b-4" type="text" name="fontfamily" disabled
+                        [(ngModel)]="element.font_family" />
+                </div>
+                <div class="col-6">
+                    <label>Font Size</label>
+                    <input class="form-control mar-b-4" type="text" name="fontsize" disabled
+                        [(ngModel)]="element.font_size" />
+                </div>
+                <div class="col-6">
+                    <label>Font Style</label>
+                    <input class="form-control mar-b-4" type="text" name="fontstyle" disabled
+                        [(ngModel)]="element.font_style" />
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="divider"></div>
+    <div class="col my-3">
+        <div class="form-group">
+            <label class="light-grey">Colour</label>
+            <div class="row d-flex align-items-center">
+                <div class="col-3">
+                    <input class="form-control color-box" type="color" name="color" [(ngModel)]="element.color" />
+                </div>
+                <div class="col-1 offset-7">
+                    <img src="assets/images/video-config/color-picker.svg">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="divider"></div>
+</div>
+<div class="properties effects">
+    <label class="mb-3 f-size-14">Effects</label>
+    <div class="col mb-3">
+        <div class="form-group">
+            <label>Effect Style</label>
+            <select class="form-control" name="effectstyle" [(ngModel)]="element.effect">
+                <option value="" selected disabled>Select</option>
+                <option *ngFor="let effect of video.allEffects">{{effect}}</option>
+            </select>
+        </div>
+    </div>
+    <div class="divider"></div>
+</div>

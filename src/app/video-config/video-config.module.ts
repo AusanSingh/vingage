@@ -6,8 +6,12 @@ import { LeftSidebarComponent } from './left-sidebar/left-sidebar.component';
 import { RouterModule, Routes } from '@angular/router';
 import { VideoContModule } from './video-cont/video-cont.module';
 import { VideoConfigService } from './services/video-config.service';
-import { DragDropModule } from '@angular/cdk/drag-drop';
 import { VideoConfigHeaderComponent } from './video-config-header/video-config-header.component';
+import { ButtonConfigurationsComponent } from './editor/button-configurations/button-configurations.component';
+import { TextConfigurationsComponent } from './editor/text-configurations/text-configurations.component';
+import { FormsModule } from '@angular/forms';
+import { NumberOnlyDirective } from './directives/number-only.directive';
+import { TwoDecimalPointsDirective } from './directives/two-decimal-points.directive';
 
 
 let route: Routes = [
@@ -20,11 +24,16 @@ let route: Routes = [
     RightSidebarComponent,
     LeftSidebarComponent,
     VideoConfigHeaderComponent,
+    TextConfigurationsComponent,
+    ButtonConfigurationsComponent,
+    NumberOnlyDirective,
+    TwoDecimalPointsDirective
   ],
   imports: [
     CommonModule,
     RouterModule.forChild(route),
-    VideoContModule
+    VideoContModule,
+    FormsModule, //for template driven
   ],
   providers: [VideoConfigService]
 })

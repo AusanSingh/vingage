@@ -204,7 +204,7 @@ $font-weight: (600);
 $margin-left: (40);
 $margin-right: (15, 40);
 $margin-top: (5, 10, 30, 35, 38, 60, 80);
-$margin-bottom: (10);
+$margin-bottom: (4, 10);
 $margin-top-bottom: (10, 15, 30);
 $margin-left-right: ();
 @each $margin in $margin-left {
@@ -241,4 +241,59 @@ $margin-left-right: ();
 }
 .cursor-pointer {
   cursor: pointer;
+}
+label {
+  margin-bottom: 8px;
+  font-size: 12px;
+}
+.form-control {
+  height: 30px;
+  font-size: 12px;
+  padding: 0.375rem;
+  &:disabled {
+    background-color: #fff;
+  }
+}
+.light-grey {
+  color: var(--sa-greyLightColor) !important;
+}
+.divider {
+  height: 1px;
+  opacity: 0.06;
+  background-color: #fff;
+}
+.form-group {
+  label {
+    color: #fff;
+  }
+}
+.properties {
+  margin-bottom: 16px;
+}
+/* CSS for Fade-In Effect */
+.fade-in {
+  animation: fadeInAnimation 1s ease-in-out forwards;
+}
+
+@keyframes fadeInAnimation {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* CSS for Fade-Out Effect */
+.fade-out {
+  animation: fadeOutAnimation 1s ease-in-out forwards;
+}
+
+@keyframes fadeOutAnimation {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
 }

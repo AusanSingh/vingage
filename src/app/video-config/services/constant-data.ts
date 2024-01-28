@@ -11,16 +11,21 @@ export const MENU_LIST = [
         type: 'text',
         config: {
           font_size: 16,
-          pos: {
+          position: {
             x: 100,
             y: 100,
           },
           color: '#000000',
-          start_time: '',
-          end_time: '',
+          duration: {
+            start: '',
+            end: ''
+          },
           text: 'Heading',
           width: 189,
-          height: 47
+          height: 47,
+          font_family: 'Helvetica',
+          font_style: 'normal',
+          effect: 'fade-in'
         }
       },
       {
@@ -30,16 +35,21 @@ export const MENU_LIST = [
         type: 'text',
         config: {
           font_size: 14,
-          pos: {
+          position: {
             x: 100,
             y: 150,
           },
           color: '#000000',
-          start_time: '',
-          end_time: '',
+          duration: {
+            start: '',
+            end: ''
+          },
           text: 'Subheading',
           width: 189,
-          height: 47
+          height: 47,
+          font_family: 'Helvetica',
+          font_style: 'normal',
+          effect: 'fade-out'
         }
       },
       {
@@ -49,16 +59,21 @@ export const MENU_LIST = [
         type: 'text',
         config: {
           font_size: 12,
-          pos: {
+          position: {
             x: 100,
             y: 150,
           },
           color: '#000000',
-          start_time: '',
-          end_time: '',
+          duration: {
+            start: '',
+            end: ''
+          },
           text: 'Body',
           width: 189,
-          height: 47
+          height: 47,
+          font_family: 'Helvetica',
+          font_style: 'normal',
+          effect: ''
         }
       },
       {
@@ -68,16 +83,21 @@ export const MENU_LIST = [
         type: 'text',
         config: {
           font_size: 12,
-          pos: {
+          position: {
             x: 100,
             y: 150,
           },
           color: '#000000',
-          start_time: '',
-          end_time: '',
+          duration: {
+            start: '',
+            end: ''
+          },
           text: 'Paragraph',
           width: 189,
-          height: 47
+          height: 47,
+          font_family: 'Helvetica',
+          font_style: 'normal',
+          effect: ''
         }
       },
     ],
@@ -94,16 +114,21 @@ export const MENU_LIST = [
         type: 'button',
         config: {
           font_size: 16,
-          pos: {
+          position: {
             x: 100,
             y: 100,
           },
           color: '#000000',
-          start_time: '',
-          end_time: '',
+          duration: {
+            start: '',
+            end: ''
+          },
           text: 'Button',
           width: 134,
-          height: 47
+          height: 47,
+          font_family: 'Helvetica',
+          font_style: 'normal',
+          effect: ''
         }
       }
     ],
