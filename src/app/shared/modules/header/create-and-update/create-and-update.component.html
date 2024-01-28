@@ -1,0 +1,58 @@
+
+
+<div class="card mb-3 border-0">
+    <div class="card-body p-4">
+
+        <div class="modal-header border-0">
+            <h6 class="text-center text-600">Create New Template</h6>
+        
+            <button type="button" class="btn-close close pull-right" aria-label="Close" >
+              <span aria-hidden="true" class="visually-hidden">&times;</span>
+            </button>
+          </div>
+
+        <div class="stepper-wrapper">
+            <div class="stepper-item active">
+                <div class="step-counter"></div>
+                <div class="step-name">First</div>
+            </div>
+            <div class="stepper-item">
+                <div class="step-counter"></div>
+                <div class="step-name">Second</div>
+            </div>
+        </div>
+
+        <form [formGroup]="createTemplateForm" (ngSubmit)="createTemplate()" *ngIf="currentStep == 1">
+            <div class="mb-3">
+                <label for="name" class="form-label">Name</label>
+                <input type="text" class="form-control" formControlName="name" id="name" aria-describedby="name"
+                    placeholder="Name">
+            </div>
+
+            <div class="mb-3">
+                <label for="description" class="form-label">Description</label>
+                <textarea type="text" class="form-control" formControlName="description" id="description"
+                    aria-describedby="description" placeholder=""></textarea>
+            </div>
+
+            <div class="text-end mb-3">
+                <button type="submit" class="btn btn-primary" [disabled]="createTemplateForm.invalid    ">Next</button> &nbsp;
+            </div>
+        </form>
+
+        <form [formGroup]="uploadVideoForm" (ngSubmit)="uploadVideo()" *ngIf="currentStep == 2">
+            <h6 class="card-title mb-3 text-center"> <span class="badge text-dark rounded-circle number_badge"></span>
+                Create New Template</h6>
+
+            <div class="mb-3 col-md-6">
+                <label for="identifier" class="form-label">File Upload</label>
+                <input type="file" (change)="onFileChange($event)" formControlName="file">
+            </div>
+
+            <div class="text-start mb-3 text-right">
+                <button type="submit" class="btn btn-primary">Next</button> &nbsp;
+            </div>
+        </form>
+
+    </div>
+</div>

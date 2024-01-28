@@ -1,0 +1,47 @@
+// Import Open Sans SemiBold
+@font-face {
+    font-family: 'Open Sans';
+    src: url('../fonts/Open_Sans/static/OpenSans-SemiBold.ttf') format('truetype');
+    font-weight: 500; // Adjust the weight accordingly
+    font-style: normal;
+  }
+  
+  // Import Open Sans Light
+  @font-face {
+    font-family: 'Open Sans';
+    src: url('../fonts/Open_Sans/static/OpenSans-Light.ttf') format('truetype');
+    font-weight: 300; // Adjust the weight accordingly
+    font-style: normal;
+  }
+  
+  // Import Open Sans Italic
+  @font-face {
+    font-family: 'Open Sans';
+    src: url('../fonts/Open_Sans/static/OpenSans-Italic.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+  }
+  
+  // Import Open Sans Bold
+  @font-face {
+    font-family: 'Open Sans';
+    src: url('../fonts/Open_Sans/static/OpenSans-Bold.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+  }
+  // Import Open Sans Bold
+  @font-face {
+    font-family: 'Open Sans';
+    src: url('../fonts/Open_Sans/static/OpenSans-Bold.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+  }
+  
+  // Import Open Sans Regular
+  @font-face {
+    font-family: 'Open Sans';
+    src: url('../fonts/Open_Sans/static/OpenSans-Regular.ttf') format('truetype');
+    font-style: normal;
+    font-weight: 400;
+  }
+  

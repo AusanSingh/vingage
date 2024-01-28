@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="224" height="113" viewBox="0 0 224 113">
+    <g data-name="Group 60439">
+        <g data-name="Group 60447" transform="translate(-283 -154)">
+            <rect data-name="Rectangle 6830" width="224" height="113" rx="4" transform="translate(283 154)" style="fill:#bdd3ff;opacity:.241"/>
+            <g data-name="Group 60437">
+                <g data-name="Ellipse 1207" transform="translate(373 189)" style="fill:#fff;stroke:#f1f6ff">
+                    <circle cx="21.5" cy="21.5" r="21.5" style="stroke:none"/>
+                    <circle cx="21.5" cy="21.5" r="21" style="fill:none"/>
+                </g>
+                <g data-name="Ellipse 1208" transform="translate(371 186)" style="fill:#fff;stroke:#f1f6ff">
+                    <circle cx="24.5" cy="24.5" r="24.5" style="stroke:none"/>
+                    <circle cx="24.5" cy="24.5" r="24" style="fill:none"/>
+                </g>
+                <path data-name="Icon awesome-play" d="M15.779 7.983 2.692.246A1.775 1.775 0 0 0 0 1.782v15.47a1.783 1.783 0 0 0 2.692 1.536l13.087-7.733a1.783 1.783 0 0 0 0-3.071z" transform="translate(388.955 200.615)" style="fill:#1867ff"/>
+            </g>
+        </g>
+    </g>
+</svg>
