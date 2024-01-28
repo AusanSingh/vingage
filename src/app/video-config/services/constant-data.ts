@@ -15,10 +15,12 @@ export const MENU_LIST = [
             x: 100,
             y: 100,
           },
-          color: '#fff',
-          start_time: 0,
-          end_time: 10,
-          text: 'Heading'
+          color: '#000000',
+          start_time: '',
+          end_time: '',
+          text: 'Heading',
+          width: 189,
+          height: 47
         }
       },
       {
@@ -32,10 +34,12 @@ export const MENU_LIST = [
             x: 100,
             y: 150,
           },
-          color: '#fff',
-          start_time: 0,
-          end_time: 10,
-          text: 'Subheading'
+          color: '#000000',
+          start_time: '',
+          end_time: '',
+          text: 'Subheading',
+          width: 189,
+          height: 47
         }
       },
       {
@@ -49,10 +53,12 @@ export const MENU_LIST = [
             x: 100,
             y: 150,
           },
-          color: '#fff',
-          start_time: 0,
-          end_time: 10,
-          text: 'Body'
+          color: '#000000',
+          start_time: '',
+          end_time: '',
+          text: 'Body',
+          width: 189,
+          height: 47
         }
       },
       {
@@ -66,10 +72,12 @@ export const MENU_LIST = [
             x: 100,
             y: 150,
           },
-          color: '#fff',
-          start_time: 0,
-          end_time: 10,
-          text: 'Paragraph'
+          color: '#000000',
+          start_time: '',
+          end_time: '',
+          text: 'Paragraph',
+          width: 189,
+          height: 47
         }
       },
     ],
@@ -90,10 +98,12 @@ export const MENU_LIST = [
             x: 100,
             y: 100,
           },
-          color: '#fff',
-          start_time: 0,
-          end_time: 10,
-          text: 'Button'
+          color: '#000000',
+          start_time: '',
+          end_time: '',
+          text: 'Button',
+          width: 134,
+          height: 47
         }
       }
     ],

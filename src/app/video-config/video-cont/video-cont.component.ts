@@ -17,6 +17,7 @@ export class VideoContComponent {
   panzoomCanvas: any = null;
   playerRef: any;
   slctdEvent: any;
+  currentTime: any;
 
   @ViewChild('canvas') canvasElement: ElementRef | any;
   elements: any = [];
@@ -26,6 +27,14 @@ export class VideoContComponent {
     })
     video.slctdEvent.subscribe(res => {
       this.slctdEvent = res;
+    })
+    video.pauseVideo.subscribe(res => {
+      if (res) {
+        this.pauseVideo();
+      }
+    })
+    video.playVideoAtSpecificTime.subscribe(res => {
+      this.playVideoAtSpecificTime();
     })
   }
 
@@ -66,8 +75,8 @@ export class VideoContComponent {
     this.playerRef.src([source]);
     // Event listener to get current time
     this.playerRef.addEventListener('timeupdate', () => {
-      const currentTime = this.playerRef.currentTime();
-      console.log('Current Time:', currentTime);
+      this.currentTime = this.playerRef.currentTime();
+      console.log('Current Time:', this.currentTime);
       // You can use 'currentTime' as needed in your application
     });
 
