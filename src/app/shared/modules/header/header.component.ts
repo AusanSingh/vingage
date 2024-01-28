@@ -1,5 +1,7 @@
-import { Component,OnInit } from '@angular/core';
+import { Component,OnInit, TemplateRef } from '@angular/core';
 import { AuthenticationService } from '../../services/authentication.service';
+import { BsModalRef, BsModalService, ModalOptions } from 'ngx-bootstrap/modal';
+import { CreateAndUpdateComponent } from './create-and-update/create-and-update.component';
 
 @Component({
   selector: 'app-header',
@@ -13,9 +15,24 @@ export class HeaderComponent implements OnInit {
   circleName: any;
   headTitle: string = '';
   userDropdown = []
+  bsModalRef?: BsModalRef;
+  
   constructor(
     public auth: AuthenticationService,
+    private modalService: BsModalService
   ){}
+
+  openModalWithComponent() {
+    const initialState: ModalOptions = {
+      initialState: {
+        list: ['Open a modal with component', 'Pass your data', 'Do something else', '...'],
+        title: 'Modal with component'
+      }
+    };
+    this.bsModalRef = this.modalService.show(CreateAndUpdateComponent, initialState);
+    this.bsModalRef.content.closeBtnName = 'Close';
+  }
+
 
   showSidebar() {
     this.openSidebar = true;

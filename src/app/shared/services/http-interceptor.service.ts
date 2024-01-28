@@ -55,19 +55,9 @@ export class HttpInterceptorService implements HttpInterceptor {
     next: HttpHandler
   ): Observable<HttpEvent<any>> {
     // let currentUserToken = this._auth.getAccessToken();
-    let formData = [''];
-    let url = request.url;
-    let isFormData = false;
-    let isThirdPartyapi = false;
-    formData.forEach(data => {
-      if (url.includes(data)) isFormData = true;
-    })
-    
-    if (isFormData) {
-      request = request.clone(this._auth.http_media_option);
-    } else {
-      request = request.clone(this._auth.http_option);
-    }
+
+
+   
     request = request.clone({
       withCredentials: false
     });

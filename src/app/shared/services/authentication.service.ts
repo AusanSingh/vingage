@@ -33,7 +33,7 @@ export class AuthenticationService {
   }
 
   // Post request
-  postRequest(api_url: any, data: any, httpOptions?:any): Observable<any> {
+  postRequest(api_url: any, data: any, httpOptions:any = this.http_option): Observable<any> {
     const url = `${this.BASE_URL}${api_url}`;
     // const url = `${api_url}`;
     return this.http.post(url, data, httpOptions);
@@ -94,7 +94,7 @@ export class AuthenticationService {
     this.httpOptions = {
       headers: new HttpHeaders({
         "Content-Type": "application/json",
-        Authorization: `Bearer ${this.getAccessToken}`,
+        'vingage-x': `secret-token`,
       }),
     };
     return this.httpOptions;
@@ -103,26 +103,29 @@ export class AuthenticationService {
   get http_media_option() {
     this.httpOptions = {
       headers: new HttpHeaders({
-        Authorization: `Bearer ${this.getAccessToken}`,
+        'vingage-x': ``,
       }),
     };
     return this.httpOptions;
   }
 
+  data = {
+    "name": "text2-attachment",
+    "description": "aaa",
+    "file_name": "",
+    "meta_data": {},
+    "status": "",
+    "uploaded_url": "",
+    "transformed_url": "",
+    "created_at": "2024-01-28T15:11:19.925000",
+    "updated_at": "2024-01-28T15:11:19.925000",
+    "id": "11ed3d0275"
+}
+
 
   logout() {
     if (!this.getAccessToken) return;
     this.clearLocalStorageGoToLogin();
-    return
-    this.clearLocalStorageGoToLogin();
-    this.postRequest("/api/v2/logout", {}).subscribe(
-      (res) => {
-       this.clearLocalStorageGoToLogin();
-      },
-        (error) => {
-          if (error.status == 401 || error.status == 403) this.clearLocalStorageGoToLogin();
-          else this.toastr.error("Something went wrong while logging out.")
-        });
   }
 
   getRequiredConfigBeforeAccess() {

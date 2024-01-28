@@ -7,11 +7,12 @@
       </a>
       <h2 class="m-0 d-inline-block fw-normal display_heading">{{headTitle|| ""}}</h2>
     </div>
-    <div class="header__right user btn-group" dropdown>
+    <div class="header__right user btn-group">
       <div class=" text-end me-3">
-        <a class="btn btn-sm btn-primary" routerLink="/video/create"> Create Template</a>
+        <button type="button" class="btn btn-sm btn-outline-primary" (click)="openModalWithComponent()">Create Template</button>
+
     </div>
-      <div>
+      <div dropdown>
         <button id="user-dropdown" dropdownToggle type="button" class="btn btn-primary rounded-circle border-0 p-0 user__icon text-uppercase" aria-controls="user-dropdown-area">{{circleName}}<span class="caret"></span>
         </button>
         <ul id="user-dropdown-area" *dropdownMenu class="dropdown-menu border-0 user__dropdown p-0"

@@ -56,7 +56,7 @@ export class ListComponent {
       })
   }
 
-  deleteChannel() {
+  deleteTemplate() {
     return
     this.auth.deleteRequest(`/api/v1/channel/?id=${this.currentChannel?.id}`)
       .subscribe({

@@ -9,11 +9,11 @@ const routes: Routes = [
   {
     path: 'video-config/:video-id', 
     loadChildren: () => import("./video-config/video-config.module").then(m => m.VideoConfigModule),
-  },
-  {
-    path:'account',
-    loadChildren: () => import("./account/account.module").then(m => m.AccountModule)
-  },
+  }
+  // {
+  //   path:'account',
+  //   loadChildren: () => import("./account/account.module").then(m => m.AccountModule)
+  // },
 ];
 
 @NgModule({

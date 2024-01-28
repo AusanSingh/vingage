@@ -16,7 +16,7 @@ body{
             margin: auto;
         }
        .welcome_text{
-        font-family: Helvetica;
+        font-family: 'Open Sans', sans-serif;
         font-size: 24px;
         font-weight: normal;
         text-align: left;
@@ -70,7 +70,7 @@ input {
     height: 520px;
     position: relative;
     display: inline-block;
-    background: url(../../assets/icons/network.png); 
+    // background: url(../../assets/icons/network.png); 
     background-size: cover;
     background-repeat: no-repeat
 }

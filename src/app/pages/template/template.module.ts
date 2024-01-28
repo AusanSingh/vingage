@@ -5,6 +5,7 @@ import { ListComponent } from './list/list.component';
 import { RouterModule, Routes } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RemoveUnderscorePipe } from 'src/app/shared/pipes/string.pipes';
+import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 
 let routes: Routes = [
   {
@@ -34,7 +35,8 @@ let routes: Routes = [
     CommonModule,
     FormsModule,
     ReactiveFormsModule,
-    RouterModule.forChild(routes)
+    RouterModule.forChild(routes),
+    BsDropdownModule.forRoot()
   ]
 })
 export class TemplateModule { }
