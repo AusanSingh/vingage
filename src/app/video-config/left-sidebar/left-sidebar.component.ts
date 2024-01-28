@@ -24,6 +24,7 @@ export class LeftSidebarComponent {
     let val: any = this.video.$selectedElements.value;
     elem["id"] = val.length;
     val.push(JSON.parse(JSON.stringify(elem)));
-    this.video.$selectedElements.next(val)
+    this.video.$selectedElements.next(val);
+    this.video.pauseVideo.next(true);
   }
 }

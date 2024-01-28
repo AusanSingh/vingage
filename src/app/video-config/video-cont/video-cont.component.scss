@@ -3,19 +3,30 @@
   width: 607px;
   height: 391px;
   display: block;
-  &:hover {
-    .vjs-control-bar {
-      visibility: visible !important;
-      opacity: 1 !important;
-      transition: visibility 1s, opacity 1s !important;
-    }
-  }
+  // &:hover {
+  //   .vjs-control-bar {
+  //     visibility: visible !important;
+  //     opacity: 1 !important;
+  //     transition: visibility 1s, opacity 1s !important;
+  //   }
+  // }
   .azuremediaplayer {
     .vjs-control-bar {
       z-index: 99;
+      position: absolute;
+      bottom: -36px;
+      visibility: visible !important;
+      opacity: 1 !important;
+      transition: visibility 1s, opacity 1s !important;
+
       .amp-controlbaricons-right {
         display: none;
       }
+    }
+    .vjs-big-play-button {
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
     }
     .amp-logo {
       display: none;
@@ -35,19 +46,16 @@
       overflow: hidden;
       transform: none !important;
       .overlay-content {
-        width: 120px;
-        height: 30px;
-        border: solid 1px #ccc;
         cursor: move;
         display: flex;
         justify-content: center;
         align-items: center;
         text-align: center;
-        background: transparent;
-        border-radius: 4px;
         position: absolute;
         z-index: 1;
         transition: box-shadow 200ms cubic-bezier(0, 0, 0.2, 1);
+        padding: 12px 53px;
+        background-color: #fff;
       }
       .overlay-content:hover {
         box-shadow: 0px 1px 15px 7px rgba(153, 163, 174, 0.36);

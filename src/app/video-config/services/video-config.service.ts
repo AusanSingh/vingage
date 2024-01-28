@@ -6,6 +6,8 @@ export class VideoConfigService {
     $selectedElements = new BehaviorSubject([]);
     setElementDataForConfig = new Subject();
     slctdEvent = new Subject();
+    pauseVideo = new Subject();
+    playVideoAtSpecificTime = new Subject();
     constructor() {
 
     }

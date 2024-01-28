@@ -17,6 +17,8 @@
                         'top': item.config.pos.y + 'px', 
                         'color': item.config.color,
                         'font-size': item.config.font_size + 'px',
+                        'width': item.config.width + 'px',
+                        'height': item.config.height + 'px',
                         }" cdkDrag (cdkDragStarted)="startDragging($event,i)" (cdkDragEnded)="endDragging($event,i)"
                     [cdkDragFreeDragPosition]="item?.config?.pos" (click)="setElementForConfig(i)">
                     {{item?.config.text}}
@@ -24,5 +26,5 @@
             </div>
         </div>
     </div>
-    <img src="assets/images/video-config/button-disclaimer.svg" class="mar-t-35" *ngIf="slctdEvent == 'button'">
+    <img src="assets/images/video-config/button-disclaimer.svg" class="mar-t-60" *ngIf="slctdEvent == 'button'">
 </div>
