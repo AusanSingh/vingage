@@ -4,18 +4,19 @@
 
             <h6 class="f-size-18 text-600">Template</h6>
         </div>
-        <ng-container *ngIf="videoList.length; else nodata">
+        <ng-container *ngIf="templateList.length; else nodata">
             <div class="row">
-                <div class="col-md-3" *ngFor="let video of videoList">
+                <div class="col-md-3" *ngFor="let template of templateList">
                     <div class="card box_shadow border-0 rounded-3 position-relative mb-3" >
                         <div dropdown class="position-absolute card_dropdown"> 
-                            <button id="user-dropdown" dropdownToggle type="button" class="btn btn-primary  text-uppercase" aria-controls="user-dropdown-area">...<span class="caret"></span>
+                            <button id="user-dropdown" dropdownToggle type="button" class="btn btn-primary  text-uppercase" aria-controls="user-dropdown-area"><div class="three-dots"><span></span><span></span><span></span></div>
+                                <span class="caret"></span>
                             </button>
                             <ul id="user-dropdown-area" *dropdownMenu class="dropdown-menu dropdown-menu-right border-0 p-0"
                                 role="menu" aria-labelledby="user-dropdown">
-                                <li role="menuitem">
-                                  <a class="dropdown-item"><i class="ico icon-Profile"></i> Copy</a>
-                                  <a class="dropdown-item"><i class="ico icon-Profile"></i> Delete</a>
+                                <li role="menuitem f-size-14">
+                                  <a href="#" class="dropdown-item"><i class="icon-copy f-size-14"></i> Copy</a>
+                                  <a href="#" class="dropdown-item"><i class="icon-delete f-size-14"></i> Delete</a>
                                 </li>
                             </ul>
                           </div>
@@ -23,12 +24,12 @@
 
                         <img class="card-img-top" src="assets/images/default_thumb.svg" alt="Card image cap">
                         <div class="card-body">
-                            <h6 class="card-title text-700">{{video?.name}}</h6>
-                            <p class="card-text">{{video.description}}</p>
+                            <h6 class="card-title text-700">{{template?.name}}</h6>
+                            <p class="card-text">{{template.description}}</p>
                             <div class="row">
                                 <div class="col-6"><a href="#" class="btn btn-outline-primary d-block">Preview</a> </div>
                                 <div class="col-6"><a href="#" class="btn btn-primary d-block"
-                                        routerLink="/video-config/{{video.id}}">Edit</a> </div>
+                                        routerLink="/video-config/{{template.template_id}}">Edit</a> </div>
                             </div>
                         </div>
                     </div>

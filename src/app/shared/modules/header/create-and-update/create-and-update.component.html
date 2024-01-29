@@ -1,15 +1,13 @@
-
-
 <div class="card mb-3 border-0">
     <div class="card-body p-4">
-
+        <!-- Modal Header -->
         <div class="modal-header border-0">
             <h6 class="text-center text-600">Create New Template</h6>
-        
-            <button type="button" class="btn-close close pull-right" aria-label="Close" >
-              <span aria-hidden="true" class="visually-hidden">&times;</span>
+
+            <button type="button" class="btn-close close pull-right" aria-label="Close" (click)="bsModalRef.hide()">
+                <span aria-hidden="true" class="visually-hidden">&times;</span>
             </button>
-          </div>
+        </div>
 
         <div class="stepper-wrapper">
             <div class="stepper-item active">
@@ -21,7 +19,7 @@
                 <div class="step-name">Second</div>
             </div>
         </div>
-
+        <!-- Create Template Form -->
         <form [formGroup]="createTemplateForm" (ngSubmit)="createTemplate()" *ngIf="currentStep == 1">
             <div class="mb-3">
                 <label for="name" class="form-label">Name</label>
@@ -36,26 +34,28 @@
             </div>
 
             <div class="text-end mb-3">
-                <button type="submit" class="btn btn-primary" [disabled]="createTemplateForm.invalid    ">Next</button> &nbsp;
+                <button type="submit" class="btn btn-primary" [disabled]="createTemplateForm.invalid">Next</button>
+                &nbsp;
             </div>
         </form>
-
+        <!-- Upload Video Form -->
         <form [formGroup]="uploadVideoForm" (ngSubmit)="getPresignedAndUploadVideo()" *ngIf="currentStep == 2">
             <div class="upload-box position-relative mb-3">
-                <label for="file" class="form-label btn btn-outline-primary" *ngIf="!selectedFile?.name">File Upload</label>
+                <label for="file" class="form-label btn btn-outline-primary" *ngIf="!selectedFile?.name">File
+                    Upload</label>
                 <label class="form-label d-flex align-items-center" *ngIf="selectedFile?.name">
-                    {{selectedFile?.name}} 
-                    <button type="button" (click)="resetFile(video)" class="btn-close close pull-right f-size-10 " aria-label="Close" >
+                    {{selectedFile?.name}}
+                    <button type="button" (click)="resetFile(video)" class="btn-close close pull-right f-size-10 "
+                        aria-label="Close">
                         <span aria-hidden="true" class="visually-hidden">&times;</span>
-                      </button>
+                    </button>
                 </label>
-                <input class="position-absolute" #video hidden type="file" (change)="onFileChange($event)" id="file" formControlName="file">
+                <input class="position-absolute" #video hidden type="file" (change)="onFileChange($event)" id="file"
+                    formControlName="file">
             </div>
-
-            
-
             <div class="text-end mb-3">
-                <button type="submit" class="btn btn-primary">Submit</button> &nbsp;
+                <button type="submit" class="btn btn-primary" [disabled]="uploadVideoForm.invalid">Submit</button>
+                &nbsp;
             </div>
         </form>
 

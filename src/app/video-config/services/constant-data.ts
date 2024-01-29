@@ -10,17 +10,23 @@ export const MENU_LIST = [
         tag: 'h1',
         type: 'text',
         config: {
+          action: '',
           font_size: 16,
-          pos: {
+          position: {
             x: 100,
             y: 100,
           },
           color: '#000000',
-          start_time: '',
-          end_time: '',
+          duration: {
+            start: '',
+            end: ''
+          },
           text: 'Heading',
           width: 189,
-          height: 47
+          height: 47,
+          font_family: 'Helvetica',
+          font_style: 'normal',
+          effect: ''
         }
       },
       {
@@ -29,17 +35,23 @@ export const MENU_LIST = [
         tag: 'h2',
         type: 'text',
         config: {
+          action: '',
           font_size: 14,
-          pos: {
+          position: {
             x: 100,
             y: 150,
           },
           color: '#000000',
-          start_time: '',
-          end_time: '',
+          duration: {
+            start: '',
+            end: ''
+          },
           text: 'Subheading',
           width: 189,
-          height: 47
+          height: 47,
+          font_family: 'Helvetica',
+          font_style: 'normal',
+          effect: ''
         }
       },
       {
@@ -48,17 +60,23 @@ export const MENU_LIST = [
         tag: 'p',
         type: 'text',
         config: {
+          action: '',
           font_size: 12,
-          pos: {
+          position: {
             x: 100,
             y: 150,
           },
           color: '#000000',
-          start_time: '',
-          end_time: '',
+          duration: {
+            start: '',
+            end: ''
+          },
           text: 'Body',
           width: 189,
-          height: 47
+          height: 47,
+          font_family: 'Helvetica',
+          font_style: 'normal',
+          effect: ''
         }
       },
       {
@@ -67,17 +85,23 @@ export const MENU_LIST = [
         tag: 'p',
         type: 'text',
         config: {
+          action: '',
           font_size: 12,
-          pos: {
+          position: {
             x: 100,
             y: 150,
           },
           color: '#000000',
-          start_time: '',
-          end_time: '',
+          duration: {
+            start: '',
+            end: ''
+          },
           text: 'Paragraph',
           width: 189,
-          height: 47
+          height: 47,
+          font_family: 'Helvetica',
+          font_style: 'normal',
+          effect: ''
         }
       },
     ],
@@ -93,17 +117,25 @@ export const MENU_LIST = [
         tag: 'button',
         type: 'button',
         config: {
+          action: '',
+          action_url: '',
+          go_to_duration: '',
           font_size: 16,
-          pos: {
+          position: {
             x: 100,
             y: 100,
           },
           color: '#000000',
-          start_time: '',
-          end_time: '',
+          duration: {
+            start: '',
+            end: ''
+          },
           text: 'Button',
           width: 134,
-          height: 47
+          height: 47,
+          font_family: 'Helvetica',
+          font_style: 'normal',
+          effect: ''
         }
       }
     ],

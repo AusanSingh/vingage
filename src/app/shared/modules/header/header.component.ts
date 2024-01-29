@@ -11,7 +11,9 @@ import { CreateAndUpdateComponent } from './create-and-update/create-and-update.
 export class HeaderComponent implements OnInit {
   openSidebar: boolean = false;
   isLoading: boolean = false;
-  user: any;
+  user: any = {
+    email: 'test@vingage.com'
+  };
   circleName: any;
   headTitle: string = '';
   userDropdown = []
@@ -20,7 +22,8 @@ export class HeaderComponent implements OnInit {
   constructor(
     public auth: AuthenticationService,
     private modalService: BsModalService
-  ){}
+  ){
+  }
 
   openModalWithComponent() {
     const initialState: ModalOptions = {

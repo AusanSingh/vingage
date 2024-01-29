@@ -1,0 +1,40 @@
+<div class="properties text-configuration">
+    <label class="mb-3 f-size-14">Text Configurations</label>
+    <div class="col mb-3">
+        <div class="form-group">
+            <label>Text Name</label>
+            <input class="form-control mar-b-4" type="text" name="textname" [(ngModel)]="element.text"
+                placeholder="Enter name" />
+            <span class="f-size-10">{{sublabel}}</span>
+        </div>
+    </div>
+    <div class="col mb-3">
+        <div class="form-group">
+            <label>Select Action</label>
+            <select class="form-control" name="action" [(ngModel)]="element.action">
+                <option value="" selected disabled>Select</option>
+                <option *ngFor="let action of actions" [ngValue]="action.value">{{action.key}}</option>
+            </select>
+        </div>
+    </div>
+    <div class="col mb-3">
+        <div class="form-group">
+            <label class="light-grey">Set time to display</label>
+            <div class="row">
+                <div class="col-6">
+                    <label>Start time</label>
+                    <input class="form-control mar-b-4" type="number" name="starttime"
+                        [(ngModel)]="element.duration.start" placeholder="Enter start time" appTwoDecimalPlaces
+                        [maxAllowedValue]="video.totalVideoDuration" />
+                </div>
+                <div class="col-6">
+                    <label>End time</label>
+                    <input class="form-control mar-b-4" type="number" name="endtime" [(ngModel)]="element.duration.end"
+                        placeholder="Enter end time" appTwoDecimalPlaces [maxAllowedValue]="video.totalVideoDuration" />
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="divider"></div>
+</div>
+<app-comp-style-effect [element]="element" [config]="config"></app-comp-style-effect>

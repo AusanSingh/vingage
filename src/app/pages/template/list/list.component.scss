@@ -6,5 +6,31 @@
         width: 24px;
         height: 24px;
         border-radius: 0 12px 0px 12px;
+        background: var(--sa-primaryLightColor-2);
+        border-color: var(--sa-primaryLightColor-2);
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 }
+
+.three-dots {
+    display: flex;
+    justify-content: space-between;
+    width: 1em;
+    flex-shrink: 0;
+    span {
+        width: 3px;
+        height: 3px;
+        background: #fff;
+        display: block;
+        border-radius: 3px;
+    }
+  }
+  
+  .card-text {
+    height: 40px;
+    overflow: auto;
+  }
+  
+  

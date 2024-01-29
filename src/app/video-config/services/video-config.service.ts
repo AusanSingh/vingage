@@ -8,6 +8,10 @@ export class VideoConfigService {
     slctdEvent = new Subject();
     pauseVideo = new Subject();
     playVideoAtSpecificTime = new Subject();
+    allEffects = ['fade-in', 'fade-out'];
+    totalVideoDuration: any;
+    currentVideoTime: any;
+
     constructor() {
 
     }

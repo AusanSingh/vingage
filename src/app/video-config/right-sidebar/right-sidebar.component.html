@@ -15,9 +15,18 @@
             </ul>
         </div>
         <div class="configuration-body">
+            <!-- For setting properties -->
             <ng-container *ngIf="activeTabIndex === 1">
-                <pre class="mb-0" *ngIf="element" [innerHTML]="element | json"></pre>
+                <div [ngSwitch]="setElementDataForConfig?.type">
+                    <div *ngSwitchCase="'text'">
+                        <app-text-configurations [element]="element"></app-text-configurations>
+                    </div>
+                    <div *ngSwitchCase="'button'">
+                        <app-button-configurations [element]="element"></app-button-configurations>
+                    </div>
+                </div>
             </ng-container>
+            <!-- For Elements -->
             <ng-container *ngIf="activeTabIndex === 2 || (allElements.length && !element)">
                 <div *ngFor="let item of allElements;let i =index">
                     <div class="added-elements">
@@ -26,7 +35,8 @@
                         <span class="actions">
                             <img class="cursor-pointer" src="assets/images/video-config/delete.svg"
                                 (click)="deleteElement(i)">
-                            <img class="cursor-pointer" src="assets/images/video-config/edit.svg">
+                            <img class="cursor-pointer" src="assets/images/video-config/edit.svg"
+                                (click)="editElement(i)">
                         </span>
                     </div>
                 </div>

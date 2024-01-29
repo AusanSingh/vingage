@@ -13,7 +13,7 @@ export class LeftSidebarComponent {
   menuList = MENU_LIST;
   selectedMenu: any = '';
   constructor(private video: VideoConfigService) {
-
+    this.selectedMenu = this.menuList[0];
   }
 
   setMenuActive(menu: any): void {
@@ -21,10 +21,11 @@ export class LeftSidebarComponent {
     this.video.slctdEvent.next(menu.type)
   }
   addElement(elem: any) {
+    this.video.pauseVideo.next(true);
     let val: any = this.video.$selectedElements.value;
     elem["id"] = val.length;
+    elem["config"]["duration"]["start"] = this.video.currentVideoTime;
     val.push(JSON.parse(JSON.stringify(elem)));
     this.video.$selectedElements.next(val);
-    this.video.pauseVideo.next(true);
   }
 }

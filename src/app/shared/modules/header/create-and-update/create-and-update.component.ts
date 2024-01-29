@@ -25,7 +25,8 @@ export class CreateAndUpdateComponent implements OnInit{
     private auth: AuthenticationService,
     private toastr: ToastrService,
     public bsModalRef: BsModalRef,
-    private http: HttpClient
+    private http: HttpClient,
+    private route: Router
   ) {
     this.createTemplateForm = this.fb.group({
       "name": ["", Validators.required],
@@ -37,27 +38,9 @@ export class CreateAndUpdateComponent implements OnInit{
   }
 
   ngOnInit() {
-    this.list.push('PROFIT!!!');
-
-    this.currentStep = 2;
+    // this.list.push('PROFIT!!!');
+    // this.currentStep = 2;
   }
-
-
-  
-  // currentTemplate = 
-  //   {
-  //     "name": "text2-attachment",
-  //     "description": "aaa",
-  //     "file_name": "",
-  //     "meta_data": {},
-  //     "status": "",
-  //     "uploaded_url": "",
-  //     "transformed_url": "",
-  //     "created_at": "2024-01-28T15:11:19.925000",
-  //     "updated_at": "2024-01-28T15:11:19.925000",
-  //     "id": "11ed3d0275"
-  //   }
-  
 
 
   currentTemplate: any;
@@ -75,7 +58,6 @@ export class CreateAndUpdateComponent implements OnInit{
           this.currentTemplate = res;
          
           this.toastr.success("Created Successfully!");
-          // this.router.navigateByUrl('/video-config/212');
           this.currentStep = 2;
         },
         error: (error) => {
@@ -97,8 +79,9 @@ export class CreateAndUpdateComponent implements OnInit{
     this.http.put(res.url, this.selectedFile, this.auth.http_media_option)
     .subscribe({
       next: (res) => {
-        console.log(res)
-
+        this.bsModalRef.hide();
+        this.toastr.success("Video uploaded successfully.");
+        this.route.navigateByUrl('/video-config/'+this.currentTemplate.template_id);
       },
       error: () => {
 
@@ -111,7 +94,7 @@ export class CreateAndUpdateComponent implements OnInit{
 
     let data = {
       "file_name": this.selectedFile?.name,
-      "template_id": this.currentTemplate.id
+      "template_id": this.currentTemplate.template_id
     }
 
     console.log(this.uploadVideoForm.value)
@@ -121,7 +104,6 @@ export class CreateAndUpdateComponent implements OnInit{
     .subscribe({
       next: (res) => {
         console.log(res)
-
         this.uploadVideo(res);
       },
       error: () => {

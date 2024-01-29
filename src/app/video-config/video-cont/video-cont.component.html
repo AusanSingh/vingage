@@ -1,30 +1,4 @@
 <div class="container d-flex align-items-center justify-content-center mar-t-38 flex-column">
-    <!-- <div
-        style="display: flex;align-items: center;justify-content: center;flex-direction: column; position: absolute;left: 0">
-        <button class="btn btn-primary mb-2" (click)="playVideo()">Play Video</button>
-        <button class="btn btn-primary mb-2" (click)="pauseVideo()">Pause Video</button>
-        <button class="btn btn-primary" (click)="playVideoAtSpecificTime()">Play Video at Specific Point</button>
-    </div> -->
-
-    <div class="parent-div">
-        <div id="azuremediaplayer" class="azuremediaplayer amp-default-skin"></div>
-        <div id="canvas-wrapper">
-            <div #canvas class="canvas-container">
-                <!-- (wheel)="onCanvasZoom($event)" [ngStyle]="{ transform: 'scale(' + zoomScale + ')' }" -->
-                <div cdkDragBoundary=".canvas-container" *ngFor="let item of elements;let i = index"
-                    class="overlay-content" id="{{i}}" [ngStyle]="{ 
-                        'left': item.config.pos.x + 'px', 
-                        'top': item.config.pos.y + 'px', 
-                        'color': item.config.color,
-                        'font-size': item.config.font_size + 'px',
-                        'width': item.config.width + 'px',
-                        'height': item.config.height + 'px',
-                        }" cdkDrag (cdkDragStarted)="startDragging($event,i)" (cdkDragEnded)="endDragging($event,i)"
-                    [cdkDragFreeDragPosition]="item?.config?.pos" (click)="setElementForConfig(i)">
-                    {{item?.config.text}}
-                </div>
-            </div>
-        </div>
-    </div>
+    <app-media-player></app-media-player>
     <img src="assets/images/video-config/button-disclaimer.svg" class="mar-t-60" *ngIf="slctdEvent == 'button'">
 </div>

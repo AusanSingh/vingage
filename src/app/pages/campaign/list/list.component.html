@@ -1,1 +1,73 @@
-<p>list works!</p>
+<div class="row">
+    <div class="col-md-12 table_listing__container">
+        <div class="card box_shadow border-0">
+            <div class="card-body">
+                <div class="row mb-4 align-items-center">
+                    <div class="col-md-5">
+
+                    </div>
+                    <div class="col-md-7">
+                        <div class="d-flex float-end">
+                            <div class="position-relative search_box">
+                                <input type="search" class="form-control" placeholder="Search..." style="width: 200px;">
+                                <span class="serach_icon"><i class="icon-search"></i> </span>
+                            </div>
+                            <a class="btn btn-primary btn-sm ms-2" routerLink="/channels/rcs/create"> + Link New</a>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="table-responsive border-top min_table_height">
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>Campaign Name</th>
+                                <th>Video Template</th>
+                                <th>Campaign type</th>
+                                <th>Output Type</th>
+                                <th>Create at</th>
+                                <th>Views</th>
+                                <th>Clicks</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <ng-container *ngIf="campaignList.length; else nodata">
+                                <tr *ngFor="let rcs of campaignList">
+                                    <td>{{rcs.name}}</td>
+                                    <td>
+                                        <div>{{rcs?.template}}</div>
+                                    </td>
+                                    <td>{{rcs.type}}</td>
+                                    <td>{{rcs.output}}</td>
+                                    <td>{{rcs.created_at}}</td>
+                                    <td>{{rcs.view}}</td>
+                                    <td>{{rcs.clicks}}</td>
+                                    <td>
+                                        <a class="text-decoration-none me-2"><i class="icon-analytics"></i></a>
+                                        <a class="text-decoration-none"><i class="icon-archive"></i></a> &nbsp;
+                                        <a class="text-decoration-none" href="#"
+                                            (click)="openModal($event, template, rcs)"><i class="icon-delete"></i></a>
+                                    </td>
+                                </tr>
+                            </ng-container>
+                            <ng-template #nodata>
+                                <tr>
+                                    <td colspan="15" class="text-center">No data found!</td>
+                                </tr>
+                            </ng-template>
+                        </tbody>
+                    </table>
+
+                    <ng-template #template>
+                        <div class="modal-body text-center">
+                            <p>Are you sure you want to delete this campaign?</p>
+                            <button type="button" class="btn btn-default" (click)="deleteChannel()">Yes</button>
+                            <button type="button" class="btn btn-primary" (click)="decline()">No</button>
+                        </div>
+                    </ng-template>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -9,7 +9,7 @@ import { BsModalService, BsModalRef } from 'ngx-bootstrap/modal';
   styleUrls: ['./list.component.scss']
 })
 export class ListComponent {
-  videoList: any[] = [];
+  templateList: any[] = [];
   modalRef?: BsModalRef;
   currentChannel: any = '';
   user: any;
@@ -36,7 +36,7 @@ export class ListComponent {
   }
 
   getList() {
-    this.videoList = [
+    this.templateList = [
       {
           "name": "bhanu",
           "description": "dgfhjk",
@@ -96,13 +96,37 @@ export class ListComponent {
           "created_at": "2024-01-29T05:03:14.091000",
           "updated_at": "2024-01-29T05:03:14.091000",
           "template_id": "125b92eba8"
+      },
+      {
+          "name": "Test ausan",
+          "description": "Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description ",
+          "file_name": "",
+          "meta_data": {},
+          "status": "",
+          "uploaded_url": "",
+          "transformed_url": "",
+          "created_at": "2024-01-29T07:10:31.903000",
+          "updated_at": "2024-01-29T07:10:31.903000",
+          "template_id": "55b73b7170"
+      },
+      {
+          "name": "Test",
+          "description": "Test",
+          "file_name": "",
+          "meta_data": {},
+          "status": "",
+          "uploaded_url": "",
+          "transformed_url": "",
+          "created_at": "2024-01-29T07:10:31.903000",
+          "updated_at": "2024-01-29T07:10:31.903000",
+          "template_id": "e3b61b9643"
       }
   ]
     // return;
     this.auth.getRequest(`/api/v1/user/templates`)
       .subscribe({
         next: (res) => {
-          this.videoList = res;
+          this.templateList = res;
           console.log('video', res)
         },
         error: () => {
@@ -118,7 +142,7 @@ export class ListComponent {
         next: (res) => {
           console.log(res)
           this.modalRef?.hide();
-          this.videoList = this.videoList.filter(item => item !== this.currentChannel);
+          this.templateList = this.templateList.filter(item => item !== this.currentChannel);
           this.toastr.success('Deleted successfully!')
         },
         error: (err) => {
