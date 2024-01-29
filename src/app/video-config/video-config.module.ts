@@ -10,8 +10,8 @@ import { VideoConfigHeaderComponent } from './video-config-header/video-config-h
 import { ButtonConfigurationsComponent } from './editor/button-configurations/button-configurations.component';
 import { TextConfigurationsComponent } from './editor/text-configurations/text-configurations.component';
 import { FormsModule } from '@angular/forms';
-import { NumberOnlyWithDotDirective } from './directives/number-only-with-dot.directive';
 import { TwoDecimalPlacesDirective } from './directives/two-decimal-place.directive';
+import { CompStyleEffectComponent } from './editor/shared/comp-style-effect/comp-style-effect.component';
 
 
 let route: Routes = [
@@ -26,8 +26,8 @@ let route: Routes = [
     VideoConfigHeaderComponent,
     TextConfigurationsComponent,
     ButtonConfigurationsComponent,
-    NumberOnlyWithDotDirective,
-    TwoDecimalPlacesDirective
+    TwoDecimalPlacesDirective,
+    CompStyleEffectComponent
   ],
   imports: [
     CommonModule,
