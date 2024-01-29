@@ -24,13 +24,13 @@
                 <div class="col-6">
                     <label>Start time</label>
                     <input class="form-control mar-b-4" type="number" name="starttime"
-                        [(ngModel)]="element.duration.start" placeholder="Enter start time" appTwoDecimalPlaces
+                        [(ngModel)]="element.duration.start" placeholder="Enter start time" appNumberOnly
                         [maxAllowedValue]="video.totalVideoDuration" />
                 </div>
                 <div class="col-6">
                     <label>End time</label>
                     <input class="form-control mar-b-4" type="number" name="endtime" [(ngModel)]="element.duration.end"
-                        placeholder="Enter end time" appTwoDecimalPlaces [maxAllowedValue]="video.totalVideoDuration" />
+                        placeholder="Enter end time" appNumberOnly [maxAllowedValue]="video.totalVideoDuration" />
                 </div>
             </div>
         </div>

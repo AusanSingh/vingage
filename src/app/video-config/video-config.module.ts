@@ -10,8 +10,9 @@ import { VideoConfigHeaderComponent } from './video-config-header/video-config-h
 import { ButtonConfigurationsComponent } from './editor/button-configurations/button-configurations.component';
 import { TextConfigurationsComponent } from './editor/text-configurations/text-configurations.component';
 import { FormsModule } from '@angular/forms';
-import { TwoDecimalPlacesDirective } from './directives/two-decimal-place.directive';
+import { NumberOnlyDirective } from './directives/number-only.directive';
 import { CompStyleEffectComponent } from './editor/shared/comp-style-effect/comp-style-effect.component';
+import { ModalModule } from 'ngx-bootstrap/modal';
 
 
 let route: Routes = [
@@ -26,7 +27,7 @@ let route: Routes = [
     VideoConfigHeaderComponent,
     TextConfigurationsComponent,
     ButtonConfigurationsComponent,
-    TwoDecimalPlacesDirective,
+    NumberOnlyDirective,
     CompStyleEffectComponent
   ],
   imports: [
@@ -34,6 +35,7 @@ let route: Routes = [
     RouterModule.forChild(route),
     VideoContModule,
     FormsModule, //for template driven
+    ModalModule.forRoot()
   ],
   providers: [VideoConfigService]
 })

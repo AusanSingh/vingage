@@ -13,8 +13,11 @@ export class ButtonConfigurationsComponent {
     show_font_family: true,
     show_font_size: true,
     show_font_style: true,
-    show_color: false,
+    show_color: true,
     show_effect: false,
+    show_bg_color: true,
+    show_width: true,
+    show_height: true,
   }
   action_url = "";
   constructor(public video: VideoConfigService) {

@@ -17,6 +17,9 @@ export class TextConfigurationsComponent {
     show_font_style: true,
     show_color: true,
     show_effect: true,
+    show_bg_color: true,
+    show_width: true,
+    show_height: true,
   }
 
   constructor(public video: VideoConfigService) {

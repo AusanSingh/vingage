@@ -86,9 +86,6 @@ input[type="number"] {
     background-color: var(--sa-skyBlue);
     border-color: var(--sa-primaryColor);
   }
-  &:focus {
-    background-color: var(--sa-skyBlue);
-  }
   &:active {
     background-color: var(--sa-skyBlue) !important;
     border-color: var(--sa-primaryColor) !important;

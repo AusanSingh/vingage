@@ -70,14 +70,22 @@ export class MediaPlayerComponent {
 
     // Listen for loadedmetadata event to get total duration
     this.playerRef.addEventListener('loadedmetadata', () => {
-      this.video.totalVideoDuration = +this.playerRef.duration().toFixed(2); // Total duration in seconds
+      this.video.totalVideoDuration = +(Math.floor(this.playerRef.duration())); // Total duration in seconds
     });
 
-    this.playVideoAtSpecificTime();
+    // Listen for the play event
+    this.playerRef.addEventListener('play', () => {
+      setTimeout(() => {
+        this.video.totalVideoDuration = +(Math.floor(this.playerRef.duration()));
+      })
+      // Add your custom logic here
+    });
+
+    // this.playVideoAtSpecificTime();
 
     // Event listener to get current time
     this.playerRef.addEventListener('timeupdate', () => {
-      this.video.currentVideoTime = +this.playerRef.currentTime().toFixed(2);
+      this.video.currentVideoTime = +(Math.floor(this.playerRef.currentTime()));
     });
   }
 
@@ -93,7 +101,7 @@ export class MediaPlayerComponent {
   }
 
   playVideoAtSpecificTime() {
-    this.playerRef.currentTime(0.9);
+    this.playerRef.currentTime(1);
     this.playerRef.pause(); // Optionally, start playing after setting the time
   }
 
@@ -147,6 +155,7 @@ export class MediaPlayerComponent {
   }
 
   setElementForConfig(_Index: number) {
+    this.pauseVideo();
     this.video.setElementDataForConfig.next(this.elements[_Index])
   }
 

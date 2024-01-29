@@ -18,7 +18,7 @@ export class RightSidebarComponent {
     })
     video.setElementDataForConfig.subscribe((data: any) => {
       this.setElementDataForConfig = data;
-      this.element = data.config;
+      this.element = data?.config;
       this.activeTabIndex = 1;
     })
   }

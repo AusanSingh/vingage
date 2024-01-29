@@ -22,10 +22,23 @@ export class LeftSidebarComponent {
   }
   addElement(elem: any) {
     this.video.pauseVideo.next(true);
-    let val: any = this.video.$selectedElements.value;
-    elem["id"] = val.length;
-    elem["config"]["duration"]["start"] = this.video.currentVideoTime;
-    val.push(JSON.parse(JSON.stringify(elem)));
-    this.video.$selectedElements.next(val);
+    setTimeout(() => {
+      let val: any = this.video.$selectedElements.value;
+      elem["id"] = val.length;
+      this.setDuration(elem);
+      val.push(JSON.parse(JSON.stringify(elem)));
+      this.video.$selectedElements.next(val);
+    })
   }
+
+  setDuration(elem: any) {
+    elem["config"]["duration"]["start"] = this.video.currentVideoTime;
+    let End = +this.video.currentVideoTime + 5;
+    if (End <= this.video.totalVideoDuration) {
+      elem["config"]["duration"]["end"] = End;
+    } else {
+      elem["config"]["duration"]["end"] = +this.video.totalVideoDuration;
+    }
+  }
+
 }

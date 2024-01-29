@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, TemplateRef } from '@angular/core';
 import { VideoConfigService } from '../services/video-config.service';
 
 @Component({
@@ -8,6 +8,7 @@ import { VideoConfigService } from '../services/video-config.service';
 })
 export class VideoConfigHeaderComponent {
   allElements: any;
+
   constructor(public video: VideoConfigService) {
     video.$selectedElements.subscribe(elem => {
       this.allElements = elem;
