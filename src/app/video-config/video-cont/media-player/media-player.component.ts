@@ -20,7 +20,7 @@ export class MediaPlayerComponent {
   elements: any = [];
 
 
-  constructor(private video: VideoConfigService, private elementRef: ElementRef) {
+  constructor(public video: VideoConfigService, private elementRef: ElementRef) {
     this.video.$selectedElements.subscribe(elem => {
       this.elements = elem;
     })
@@ -78,7 +78,6 @@ export class MediaPlayerComponent {
     // Event listener to get current time
     this.playerRef.addEventListener('timeupdate', () => {
       this.video.currentVideoTime = +this.playerRef.currentTime().toFixed(2);
-      // You can use 'currentTime' as needed
     });
   }
 

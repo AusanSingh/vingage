@@ -10,6 +10,7 @@ export const MENU_LIST = [
         tag: 'h1',
         type: 'text',
         config: {
+          action: 'tts',
           font_size: 16,
           position: {
             x: 100,
@@ -34,6 +35,7 @@ export const MENU_LIST = [
         tag: 'h2',
         type: 'text',
         config: {
+          action: 'text_to_video',
           font_size: 14,
           position: {
             x: 100,
@@ -58,6 +60,7 @@ export const MENU_LIST = [
         tag: 'p',
         type: 'text',
         config: {
+          action: 'tts',
           font_size: 12,
           position: {
             x: 100,
@@ -82,6 +85,7 @@ export const MENU_LIST = [
         tag: 'p',
         type: 'text',
         config: {
+          action: 'text_to_video',
           font_size: 12,
           position: {
             x: 100,

@@ -11,6 +11,15 @@
     </div>
     <div class="col mb-3">
         <div class="form-group">
+            <label>Action</label>
+            <select class="form-control" name="action" [(ngModel)]="element.action">
+                <option value="" selected disabled>Select</option>
+                <option *ngFor="let action of actions" [ngValue]="action.value">{{action.key}}</option>
+            </select>
+        </div>
+    </div>
+    <div class="col mb-3">
+        <div class="form-group">
             <label class="light-grey">Set time to display</label>
             <div class="row">
                 <div class="col-6">
