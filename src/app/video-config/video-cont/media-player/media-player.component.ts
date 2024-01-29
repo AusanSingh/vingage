@@ -61,7 +61,6 @@ export class MediaPlayerComponent {
 
     // Load your media source
     const source = {
-      // src: 'https://golustoragetest.blob.core.windows.net/asset-2f22152e-64aa-4d19-8cc1-b45946c2a048/video_2.mp4?se=2024-01-26T16%3A24%3A00Z&sp=r&sv=2023-11-03&sr=b&sig=7nbEuGsbEnJ7fWIHQnA2XJ/6KOBawW7LIHDV/aApLg0%3D',
       src: 'assets/video/video_2.mp4',
       type: 'video/mp4',
     };
@@ -78,7 +77,6 @@ export class MediaPlayerComponent {
       setTimeout(() => {
         this.video.totalVideoDuration = +(Math.floor(this.playerRef.duration()));
       })
-      // Add your custom logic here
     });
 
     // this.playVideoAtSpecificTime();
@@ -104,16 +102,6 @@ export class MediaPlayerComponent {
     this.playerRef.currentTime(1);
     this.playerRef.pause(); // Optionally, start playing after setting the time
   }
-
-  // onCanvasZoom(event) {
-  //   if (event.deltaY < 0) {
-  //     console.log('scrolling up', this.zoomLevel);
-  //     this.zoomLevel += this.zoomFactor;
-  //   } else if (event.deltaY > 0) {
-  //     console.log('scrolling down', this.zoomLevel);
-  //     this.zoomLevel -= this.zoomFactor;
-  //   }
-  // }
 
   dragConstrainPoint = (point: any, dragRef: any) => {
     let zoomMoveXDifference = 0;
