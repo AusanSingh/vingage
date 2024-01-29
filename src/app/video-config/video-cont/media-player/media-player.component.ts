@@ -16,7 +16,6 @@ export class MediaPlayerComponent {
   panzoomCanvas: any = null;
   playerRef: any;
   slctdEvent: any;
-  currentTime: any;
   @ViewChild('canvas') canvasElement: ElementRef | any;
   elements: any = [];
 
@@ -68,12 +67,18 @@ export class MediaPlayerComponent {
     };
 
     this.playerRef.src([source]);
+
+    // Listen for loadedmetadata event to get total duration
+    this.playerRef.addEventListener('loadedmetadata', () => {
+      this.video.totalVideoDuration = +this.playerRef.duration().toFixed(2); // Total duration in seconds
+    });
+
     this.playVideoAtSpecificTime();
+
     // Event listener to get current time
     this.playerRef.addEventListener('timeupdate', () => {
-      this.currentTime = this.playerRef.currentTime();
-      console.log('Current Time:', this.currentTime);
-      // You can use 'currentTime' as needed in your application
+      this.video.currentVideoTime = +this.playerRef.currentTime().toFixed(2);
+      // You can use 'currentTime' as needed
     });
   }
 
@@ -106,12 +111,6 @@ export class MediaPlayerComponent {
   dragConstrainPoint = (point: any, dragRef: any) => {
     let zoomMoveXDifference = 0;
     let zoomMoveYDifference = 0;
-    console.log(
-      'freeDragPosition dragRef: ' +
-      Math.round(dragRef.getFreeDragPosition().x) +
-      ' / ' +
-      Math.round(dragRef.getFreeDragPosition().y)
-    );
 
     if (this.zoomScale != 1) {
       zoomMoveXDifference =
@@ -119,22 +118,6 @@ export class MediaPlayerComponent {
       zoomMoveYDifference =
         (1 - this.zoomScale) * dragRef.getFreeDragPosition().y;
     }
-    console.log(
-      'zoomMoveXDifference x/y: ' +
-      Math.round(zoomMoveXDifference) +
-      ' / ' +
-      Math.round(zoomMoveYDifference)
-    );
-    console.log(
-      'Point x/y: ' + Math.round(point.x) + ' / ' + Math.round(point.y)
-    );
-    console.log(
-      'Sum x/y: ' +
-      Math.round(point.x + zoomMoveXDifference) +
-      ' / ' +
-      Math.round(point.y + zoomMoveYDifference)
-    );
-
     return {
       x: point.x + zoomMoveXDifference,
       y: point.y + zoomMoveYDifference,
@@ -142,12 +125,10 @@ export class MediaPlayerComponent {
   };
 
   startDragging($event: any, Index: number) {
-    console.log('START', Index);
     this.panzoomCanvas.pause();
   }
 
   endDragging($event: any, Index: number) {
-    console.log('END', Index);
     const elementMoving = $event.source.getRootElement();
     const elementMovingRect: ClientRect = elementMoving.getBoundingClientRect();
     const elementMovingParentElementRect: ClientRect =

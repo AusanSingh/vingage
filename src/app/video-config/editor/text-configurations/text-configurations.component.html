@@ -15,13 +15,14 @@
             <div class="row">
                 <div class="col-6">
                     <label>Start time</label>
-                    <input class="form-control mar-b-4" appNumberOnly type="text" name="starttime"
-                        [(ngModel)]="element.duration.start" placeholder="Enter start time" />
+                    <input class="form-control mar-b-4" type="number" name="starttime"
+                        [(ngModel)]="element.duration.start" placeholder="Enter start time" appTwoDecimalPlaces
+                        [maxAllowedValue]="video.totalVideoDuration" />
                 </div>
                 <div class="col-6">
                     <label>End time</label>
-                    <input class="form-control mar-b-4" appNumberOnly type="text" name="endtime"
-                        [(ngModel)]="element.duration.end" placeholder="Enter end time" />
+                    <input class="form-control mar-b-4" type="number" name="endtime" [(ngModel)]="element.duration.end"
+                        placeholder="Enter end time" appTwoDecimalPlaces [maxAllowedValue]="video.totalVideoDuration" />
                 </div>
             </div>
         </div>

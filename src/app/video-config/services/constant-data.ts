@@ -25,7 +25,7 @@ export const MENU_LIST = [
           height: 47,
           font_family: 'Helvetica',
           font_style: 'normal',
-          effect: 'fade-in'
+          effect: ''
         }
       },
       {
@@ -49,7 +49,7 @@ export const MENU_LIST = [
           height: 47,
           font_family: 'Helvetica',
           font_style: 'normal',
-          effect: 'fade-out'
+          effect: ''
         }
       },
       {

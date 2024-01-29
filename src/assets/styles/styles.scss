@@ -272,7 +272,7 @@ label {
 }
 /* CSS for Fade-In Effect */
 .fade-in {
-  animation: fadeInAnimation 1s ease-in-out forwards;
+  animation: fadeInAnimation 1s ease-in-out backwards;
 }
 
 @keyframes fadeInAnimation {
@@ -286,7 +286,7 @@ label {
 
 /* CSS for Fade-Out Effect */
 .fade-out {
-  animation: fadeOutAnimation 1s ease-in-out forwards;
+  animation: fadeOutAnimation 1s ease-in-out backwards;
 }
 
 @keyframes fadeOutAnimation {
