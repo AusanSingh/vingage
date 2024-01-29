@@ -57,8 +57,6 @@
         position: absolute;
         z-index: 1;
         transition: box-shadow 200ms cubic-bezier(0, 0, 0.2, 1);
-        padding: 12px 53px;
-        background-color: #fff;
       }
       .overlay-content:hover {
         box-shadow: 0px 1px 15px 7px rgba(153, 163, 174, 0.36);

@@ -2,6 +2,24 @@
     <label class="mb-3 f-size-14">Component Styling</label>
     <div class="col mb-3">
         <div class="form-group">
+            <label class="light-grey">Dimensions</label>
+            <div class="row">
+                <div class="col-6" *ngIf="config?.show_width">
+                    <label>Width</label>
+                    <input class="form-control mar-b-4" type="number" name="width" [(ngModel)]="element.width"
+                        appNumberOnly />
+                </div>
+                <div class="col-6" *ngIf="config?.show_height">
+                    <label>Height</label>
+                    <input class="form-control mar-b-4" type="number" name="height" [(ngModel)]="element.height"
+                        appNumberOnly />
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="divider"></div>
+    <div class="col my-3">
+        <div class="form-group">
             <label class="light-grey">Text</label>
             <div class="row">
                 <div class="col-12 mb-1" *ngIf="config?.show_font_family">
@@ -23,22 +41,31 @@
         </div>
     </div>
     <div class="divider"></div>
-    <ng-container *ngIf="config?.show_color">
-        <div class="col my-3">
-            <div class="form-group">
-                <label class="light-grey">Colour</label>
-                <div class="row d-flex align-items-center">
-                    <div class="col-3">
-                        <input class="form-control color-box" type="color" name="color" [(ngModel)]="element.color" />
-                    </div>
-                    <div class="col-1 offset-7">
-                        <img src="assets/images/video-config/color-picker.svg">
-                    </div>
+    <div class="col my-3">
+        <div class="form-group">
+            <label class="light-grey">Colour</label>
+            <div class="row d-flex align-items-center mb-3" *ngIf="config?.show_color">
+                <div class="col-3">
+                    <input class="form-control color-box" type="color" name="color" [(ngModel)]="element.color" />
+                </div>
+                <div class="col-3 p-0 f-size-12">Text</div>
+                <div class="col offset-4">
+                    <img src="assets/images/video-config/color-picker.svg">
+                </div>
+            </div>
+            <div class="row d-flex align-items-center" *ngIf="config?.show_bg_color">
+                <div class="col-3">
+                    <input class="form-control color-box" type="color" name="background"
+                        [(ngModel)]="element.background" />
+                </div>
+                <div class="col-3 p-0 f-size-12">Background</div>
+                <div class="col offset-4">
+                    <img src="assets/images/video-config/color-picker.svg">
                 </div>
             </div>
         </div>
-        <div class="divider"></div>
-    </ng-container>
+    </div>
+    <div class="divider"></div>
 </div>
 <div class="properties effects" *ngIf="config?.show_effect">
     <label class="mb-3 f-size-14">Effects</label>

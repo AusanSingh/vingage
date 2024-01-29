@@ -18,7 +18,7 @@ export class RightSidebarComponent {
     })
     video.setElementDataForConfig.subscribe((data: any) => {
       this.setElementDataForConfig = data;
-      this.element = data.config;
+      this.element = data?.config;
       this.activeTabIndex = 1;
     })
   }
@@ -28,12 +28,14 @@ export class RightSidebarComponent {
   }
 
   editElement(_Index: any) {
+    this.video.pauseVideo.next(true);
     let Ele = JSON.parse(JSON.stringify(this.allElements[_Index]));
     this.video.setElementDataForConfig.next(Ele);
     this.activeTabIndex = 1;
   }
 
   deleteElement(_Index: any) {
+    this.video.pauseVideo.next(true);
     let AllEle = JSON.parse(JSON.stringify(this.allElements));
     AllEle.splice(_Index, 1);
     this.video.$selectedElements.next(AllEle);
