@@ -66,3 +66,18 @@
         flex-grow: 1;
     }
   }
+
+
+  .upload-box {
+    height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--sa-primaryLightColor);
+    border-radius: 4px;
+  }
+  
+  .upload-box button {
+    padding: 10px;
+    cursor: pointer;
+  }

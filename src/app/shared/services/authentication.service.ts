@@ -40,23 +40,23 @@ export class AuthenticationService {
   }
 
   // Put request
-  putRequest(api_url: any, data: any, httpOptions?:any): Observable<any> {
+  putRequest(api_url: any, data: any, httpOptions:any = this.http_option): Observable<any> {
     const url = `${this.BASE_URL}${api_url}`;
     return this.http.put(url, data, httpOptions);
   }
 
   // Patch request
-  patchRequest(api_url: any, data: any, httpOptions?:any): Observable<any> {
+  patchRequest(api_url: any, data: any, httpOptions:any = this.http_option): Observable<any> {
     const url = `${this.BASE_URL}${api_url}`;
     return this.http.patch(url, data, httpOptions);
   }
 
-  deleteRequest(api_url: any, httpOptions?:any): Observable<any> {
+  deleteRequest(api_url: any, httpOptions:any = this.http_option): Observable<any> {
     const url = `${this.BASE_URL}${api_url}`;
     return this.http.delete(url, httpOptions);  
   }
 
-  public getRequest(api_url: string,httpOptions?:any): Observable<any> {
+  public getRequest(api_url: string,httpOptions:any = this.http_option): Observable<any> {
     // console.log(api_url)
     const url = `${this.BASE_URL}${api_url}`;
     // console.log(url);
@@ -103,24 +103,11 @@ export class AuthenticationService {
   get http_media_option() {
     this.httpOptions = {
       headers: new HttpHeaders({
-        'vingage-x': ``,
+        'x-ms-blob-type': 'BlockBlob'
       }),
     };
     return this.httpOptions;
   }
-
-  data = {
-    "name": "text2-attachment",
-    "description": "aaa",
-    "file_name": "",
-    "meta_data": {},
-    "status": "",
-    "uploaded_url": "",
-    "transformed_url": "",
-    "created_at": "2024-01-28T15:11:19.925000",
-    "updated_at": "2024-01-28T15:11:19.925000",
-    "id": "11ed3d0275"
-}
 
 
   logout() {
