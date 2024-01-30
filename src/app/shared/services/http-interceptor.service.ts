@@ -31,7 +31,7 @@ export class HttpInterceptorService implements HttpInterceptor {
         if(this._auth.getAccessToken) {
           this._route.navigateByUrl('/error/internal-server')
         } else {
-          this._route.navigateByUrl('/account/login')
+          // this._route.navigateByUrl('/account/login')
         }
 
       } else if (err.error) {

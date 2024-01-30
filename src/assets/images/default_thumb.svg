@@ -11,7 +11,7 @@
                     <circle cx="24.5" cy="24.5" r="24.5" style="stroke:none"/>
                     <circle cx="24.5" cy="24.5" r="24" style="fill:none"/>
                 </g>
-                <path data-name="Icon awesome-play" d="M15.779 7.983 2.692.246A1.775 1.775 0 0 0 0 1.782v15.47a1.783 1.783 0 0 0 2.692 1.536l13.087-7.733a1.783 1.783 0 0 0 0-3.071z" transform="translate(388.955 200.615)" style="fill:#1867ff"/>
+                <path data-name="Icon awesome-play" d="M15.779 7.983 2.692.246A1.775 1.775 0 0 0 0 1.782v15.47a1.783 1.783 0 0 0 2.692 1.536l13.087-7.733a1.783 1.783 0 0 0 0-3.071z" transform="translate(388.955 200.615)" style="fill:#868c97"/>
             </g>
         </g>
     </g>

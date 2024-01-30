@@ -10,6 +10,7 @@ export class VideoConfigHeaderComponent {
   allElements: any;
 
   constructor(public video: VideoConfigService) {
+    this.allElements = []
     video.$selectedElements.subscribe(elem => {
       this.allElements = elem;
     })

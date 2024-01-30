@@ -3,12 +3,18 @@
   overflow: hidden;
   .video-config-header {
     height: 50px;
-    padding: 10px 30px 8px 25px;
+    padding: 0 25px;
     background-color: #fff;
     position: fixed;
     width: 100%;
     z-index: 9;
     top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    app-video-config-header {
+      width: 100%;
+    }
   }
   .video-config-content {
     display: flex;

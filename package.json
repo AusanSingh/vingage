@@ -28,8 +28,9 @@
     "@angular/router": "^15.2.0",
     "bootstrap": "^5.3.1",
     "ngx-bootstrap": "^10.3.0",
-    "panzoom": "^9.4.3",
+    "ngx-color-picker": "^14.0.0",
     "ngx-toastr": "^15.2.2",
+    "panzoom": "^9.4.3",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.12.0"

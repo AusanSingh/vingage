@@ -12,6 +12,7 @@ import { TextConfigurationsComponent } from './editor/text-configurations/text-c
 import { FormsModule } from '@angular/forms';
 import { NumberOnlyDirective } from './directives/number-only.directive';
 import { CompStyleEffectComponent } from './editor/shared/comp-style-effect/comp-style-effect.component';
+import { ColorPickerModule } from 'ngx-color-picker';
 import { ModalModule } from 'ngx-bootstrap/modal';
 
 
@@ -35,8 +36,10 @@ let route: Routes = [
     RouterModule.forChild(route),
     VideoContModule,
     FormsModule, //for template driven
-    ModalModule.forRoot()
+    ModalModule.forRoot(),
+    ColorPickerModule
   ],
+  exports: [ColorPickerModule],
   providers: [VideoConfigService]
 })
 export class VideoConfigModule { }

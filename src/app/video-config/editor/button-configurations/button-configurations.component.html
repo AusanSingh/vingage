@@ -1,52 +1,49 @@
 <div class="properties button-configuration">
-    <label class="mb-3 f-size-14">Button Configuration</label>
-    <div class="col mb-3">
-        <div class="form-group">
-            <label>Button Name</label>
-            <input class="form-control mar-b-4" type="text" name="btnname" [(ngModel)]="element.text"
-                placeholder="Enter name" />
-        </div>
+    <h6 class="mb-3 f-size-14">Button Configuration</h6>
+    <div class="mb-3">
+        <label>Button Name</label>
+        <input class="form-control form-control-sm mar-b-4" type="text" name="btnname" [(ngModel)]="element.text"
+            placeholder="Enter name" />
     </div>
-    <div class="col mb-3">
-        <div class="form-group">
-            <label class="light-grey">Set time to display</label>
-            <div class="row">
-                <div class="col-6">
-                    <label>Start time</label>
-                    <input class="form-control mar-b-4" type="number" name="starttime"
-                        [(ngModel)]="element.duration.start" placeholder="Enter start time" appNumberOnly
-                        [maxAllowedValue]="video.totalVideoDuration" />
-                </div>
-                <div class="col-6">
-                    <label>End time</label>
-                    <input class="form-control mar-b-4" type="number" name="endtime" [(ngModel)]="element.duration.end"
-                        placeholder="Enter end time" appNumberOnly [maxAllowedValue]="video.totalVideoDuration" />
-                </div>
+
+    <div class="mb-3">
+        <label class="light-grey">Set time to display</label>
+        <div class="row">
+            <div class="col-6">
+                <label>Start time</label>
+                <input class="form-control form-control-sm mar-b-4" type="number" name="starttime"
+                    [(ngModel)]="element.duration.start" placeholder="Enter start time" appNumberOnly
+                    [maxAllowedValue]="video.totalVideoDuration" />
+            </div>
+            <div class="col-6">
+                <label>End time</label>
+                <input class="form-control form-control-sm mar-b-4" type="number" name="endtime"
+                    [(ngModel)]="element.duration.end" placeholder="Enter end time" appNumberOnly
+                    [maxAllowedValue]="video.totalVideoDuration" />
             </div>
         </div>
     </div>
-    <div class="col mb-3">
-        <div class="form-group">
-            <label class="light-grey">On click action</label>
-            <div class="row">
-                <div class="col-12 mb-3">
-                    <label>Select Action</label>
-                    <select class="form-control" name="action" [(ngModel)]="element.action">
-                        <option value="" selected disabled>Select</option>
-                        <option *ngFor="let action of actions" [ngValue]="action.value">{{action.key}}</option>
-                    </select>
-                </div>
-                <div class="col-12  mb-3">
-                    <ng-container *ngIf="element.action === 'go_to_link' ">
-                        <input class="form-control" type="text" placeholder="Enter URL here" name="url"
-                            [(ngModel)]="element.action_url" />
-                    </ng-container>
-                    <ng-container *ngIf="element.action === 'change_video_time' ">
-                        <input class="form-control" type="number" placeholder="Enter time" name="gotoduration"
-                            [(ngModel)]="element.go_to_duration" appNumberOnly
-                            [maxAllowedValue]="video.totalVideoDuration" />
-                    </ng-container>
-                </div>
+    
+    <div class="mb-3">
+        <label class="light-grey">On click action</label>
+        <div class="row">
+            <div class="col-12 mb-3">
+                <label>Select Action</label>
+                <select class="form-select form-select-sm" name="action" [(ngModel)]="element.action">
+                    <option value="" selected disabled>Select</option>
+                    <option *ngFor="let action of actions" [ngValue]="action.value">{{action.key}}</option>
+                </select>
+            </div>
+            <div class="col-12  mb-3">
+                <ng-container *ngIf="element.action === 'go_to_link' ">
+                    <input class="form-control form-control-sm" type="text" placeholder="Enter URL here" name="url"
+                        [(ngModel)]="element.action_url" />
+                </ng-container>
+                <ng-container *ngIf="element.action === 'change_video_time' ">
+                    <input class="form-control form-control-sm" type="number" placeholder="Enter time"
+                        name="gotoduration" [(ngModel)]="element.go_to_duration" appNumberOnly
+                        [maxAllowedValue]="video.totalVideoDuration" />
+                </ng-container>
             </div>
         </div>
     </div>

@@ -11,12 +11,13 @@ export class VideoConfigComponent {
   constructor(private video: VideoConfigService) { }
 
   ngOnDestroy() {
+    console.log('>>>>Destroy triggered')
     this.video.$selectedElements.next([]);
-    this.video.$selectedElements.unsubscribe();
-    this.video.setElementDataForConfig.unsubscribe();
-    this.video.slctdEvent.unsubscribe();
-    this.video.pauseVideo.unsubscribe();
-    this.video.playVideoAtSpecificTime.unsubscribe();
+    // this.video.$selectedElements.unsubscribe();
+    // this.video.setElementDataForConfig.unsubscribe();
+    // this.video.slctdEvent.unsubscribe();
+    // this.video.pauseVideo.unsubscribe();
+    // this.video.playVideoAtSpecificTime.unsubscribe();
   }
 
 }

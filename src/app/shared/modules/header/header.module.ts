@@ -6,6 +6,7 @@ import { SidebarModule } from '../sidebar/sidebar.module';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { CreateAndUpdateComponent } from './create-and-update/create-and-update.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { LoaderModule } from '../loader/loader.module';
 
 
 @NgModule({
@@ -18,7 +19,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     RouterModule,
     SidebarModule,
     ReactiveFormsModule,
-    BsDropdownModule.forRoot()
+    BsDropdownModule.forRoot(),
+    LoaderModule
   ],
   exports: [
     HeaderComponent

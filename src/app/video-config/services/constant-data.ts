@@ -24,7 +24,7 @@ export const MENU_LIST = [
           text: 'Heading',
           width: 189,
           height: 47,
-          font_family: 'Helvetica',
+          font_family: 'Open Sans',
           font_style: 'normal',
           effect: '',
           background: '#ffffff'
@@ -50,7 +50,7 @@ export const MENU_LIST = [
           text: 'Subheading',
           width: 189,
           height: 47,
-          font_family: 'Helvetica',
+          font_family: 'Open Sans',
           font_style: 'normal',
           effect: '',
           background: '#ffffff'
@@ -76,7 +76,7 @@ export const MENU_LIST = [
           text: 'Body',
           width: 189,
           height: 47,
-          font_family: 'Helvetica',
+          font_family: 'Open Sans',
           font_style: 'normal',
           effect: '',
           background: '#ffffff'
@@ -102,7 +102,7 @@ export const MENU_LIST = [
           text: 'Paragraph',
           width: 189,
           height: 47,
-          font_family: 'Helvetica',
+          font_family: 'Open Sans',
           font_style: 'normal',
           effect: '',
           background: '#ffffff'
@@ -137,7 +137,7 @@ export const MENU_LIST = [
           text: 'Button',
           width: 134,
           height: 47,
-          font_family: 'Helvetica',
+          font_family: 'Open Sans',
           font_style: 'normal',
           effect: '',
           background: '#ffffff'

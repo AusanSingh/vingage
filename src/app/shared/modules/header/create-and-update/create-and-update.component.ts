@@ -17,7 +17,7 @@ export class CreateAndUpdateComponent implements OnInit{
   title?: string;
   closeBtnName?: string;
   list: string[] = [];
-
+  isLoading = false;
   currentStep = 1;
 
   constructor(
@@ -38,8 +38,6 @@ export class CreateAndUpdateComponent implements OnInit{
   }
 
   ngOnInit() {
-    // this.list.push('PROFIT!!!');
-    // this.currentStep = 2;
   }
 
 
@@ -48,6 +46,7 @@ export class CreateAndUpdateComponent implements OnInit{
   createTemplate() {
     if (this.createTemplateForm.invalid) return;
     let data = this.createTemplateForm.value;
+    this.isLoading = true;
 
     const url = '/api/v1/user/create-template/';
 
@@ -59,9 +58,11 @@ export class CreateAndUpdateComponent implements OnInit{
          
           this.toastr.success("Created Successfully!");
           this.currentStep = 2;
+          this.isLoading = false;
         },
         error: (error) => {
           console.log(error);
+          this.isLoading = false;
         }
       })
   }
@@ -75,22 +76,42 @@ export class CreateAndUpdateComponent implements OnInit{
     this.selectedFile = (event.target as HTMLInputElement)?.files?.[0];
   }
 
-  uploadVideo(res: any) {
-    this.http.put(res.url, this.selectedFile, this.auth.http_media_option)
+  videoUploadStatus(res: any, status: string) {
+    let payload = {
+      "status": status,
+      "file_name": res.file_name,
+    }
+    this.auth.putRequest(`/api/v1/user/upload-template-status/${this.currentTemplate.template_id}`, payload)
     .subscribe({
       next: (res) => {
+        console.log(res)
         this.bsModalRef.hide();
         this.toastr.success("Video uploaded successfully.");
         this.route.navigateByUrl('/video-config/'+this.currentTemplate.template_id);
+        this.isLoading = false;
       },
       error: () => {
+        this.isLoading = false;
+      }
+    })
+    
+  }
 
+  uploadVideo(res: any) {
+    this.http.put(res.url, this.selectedFile, this.auth.http_media_option)
+    .subscribe({
+      next: (presigned_res) => {
+        this.videoUploadStatus(res, 'success');
+      },
+      error: () => {
+        this.isLoading = false;
       }
     });
   }
 
   getPresignedAndUploadVideo() {
     if(!this.selectedFile) return;
+    this.isLoading = true;
 
     let data = {
       "file_name": this.selectedFile?.name,
@@ -99,7 +120,6 @@ export class CreateAndUpdateComponent implements OnInit{
 
     console.log(this.uploadVideoForm.value)
 
-
     this.auth.postRequest(`/api/v1/media/get_presigned_url`, data)
     .subscribe({
       next: (res) => {
@@ -107,7 +127,7 @@ export class CreateAndUpdateComponent implements OnInit{
         this.uploadVideo(res);
       },
       error: () => {
-
+        this.isLoading = false;
       }
     });
   }

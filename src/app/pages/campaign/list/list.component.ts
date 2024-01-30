@@ -43,6 +43,42 @@ export class ListComponent {
         created_at: '07 July 2022',
         view: 88,
         clicks: 60
+      },
+      {
+        name: 'Promotional',
+        template: 'Promotional',
+        type: 'Voice',
+        output: 'URL',
+        created_at: '07 July 2022',
+        view: 88,
+        clicks: 60
+      },
+      {
+        name: 'Promotional',
+        template: 'Promotional',
+        type: 'Voice',
+        output: 'URL',
+        created_at: '07 July 2022',
+        view: 88,
+        clicks: 60
+      },
+      {
+        name: 'Promotional',
+        template: 'Promotional',
+        type: 'Voice',
+        output: 'URL',
+        created_at: '07 July 2022',
+        view: 78,
+        clicks: 60
+      },
+      {
+        name: 'Promotional',
+        template: 'Promotional',
+        type: 'Voice',
+        output: 'URL',
+        created_at: '07 July 2022',
+        view: 22,
+        clicks: 11
       }
     ];
   }
