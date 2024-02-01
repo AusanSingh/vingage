@@ -5,7 +5,7 @@ import { RightSidebarComponent } from './right-sidebar/right-sidebar.component';
 import { LeftSidebarComponent } from './left-sidebar/left-sidebar.component';
 import { RouterModule, Routes } from '@angular/router';
 import { VideoContModule } from './video-cont/video-cont.module';
-import { VideoConfigService } from './services/video-config.service';
+import { VideoConfigService } from 'src/app/shared/services/video-config.service';
 import { VideoConfigHeaderComponent } from './video-config-header/video-config-header.component';
 import { ButtonConfigurationsComponent } from './editor/button-configurations/button-configurations.component';
 import { TextConfigurationsComponent } from './editor/text-configurations/text-configurations.component';

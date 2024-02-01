@@ -1,5 +1,5 @@
-import { Component, ViewChild, ElementRef, AfterViewInit, ViewEncapsulation } from '@angular/core';
-import { VideoConfigService } from '../services/video-config.service';
+import { Component, ViewEncapsulation } from '@angular/core';
+import { VideoConfigService } from 'src/app/shared/services/video-config.service';
 
 @Component({
   selector: 'app-video-cont',

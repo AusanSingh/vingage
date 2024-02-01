@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { MENU_LIST } from '../services/constant-data';
-import { VideoConfigService } from '../services/video-config.service';
+import { VideoConfigService } from 'src/app/shared/services/video-config.service';
 
 
 @Component({

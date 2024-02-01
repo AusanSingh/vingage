@@ -2,16 +2,16 @@ import { NgModule } from "@angular/core";
 import { VideoContComponent } from "./video-cont.component";
 import { CommonModule } from "@angular/common";
 import { DragDropModule } from '@angular/cdk/drag-drop';
-import { MediaPlayerComponent } from "./media-player/media-player.component";
+import { MediaPlayerModule } from "src/app/shared/modules/media-player/media-player.module";
 
 @NgModule({
   declarations: [
-    VideoContComponent,
-    MediaPlayerComponent
+    VideoContComponent
   ],
   imports: [
     CommonModule,
     DragDropModule,
+    MediaPlayerModule
   ],
   exports: [VideoContComponent]
 })

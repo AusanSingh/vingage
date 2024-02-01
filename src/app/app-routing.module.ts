@@ -7,13 +7,13 @@ const routes: Routes = [
     loadChildren: () => import("./pages/pages.module").then(m => m.PagesModule),
   },
   {
-    path: 'video-config/:video-id', 
+    path: 'video-config/:template-id', 
     loadChildren: () => import("./video-config/video-config.module").then(m => m.VideoConfigModule),
-  }
-  // {
-  //   path:'account',
-  //   loadChildren: () => import("./account/account.module").then(m => m.AccountModule)
-  // },
+  },
+  {
+    path:'vingage/:template-id',
+    loadChildren: () => import("./vingage/vingage.module").then(m => m.VingageModule)
+  },
 ];
 
 @NgModule({

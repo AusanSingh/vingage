@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { VideoConfigService } from './services/video-config.service';
+import { VideoConfigService } from 'src/app/shared/services/video-config.service';
 
 @Component({
   selector: 'app-video-config',
