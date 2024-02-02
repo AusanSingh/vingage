@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600;1,700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600;1,700&display=swap");
 // @import "font_open_sans"; // Fonts used from assets folder as ttf
 @import "variable";
 @import "../../../node_modules/bootstrap/scss/bootstrap";
@@ -89,7 +89,7 @@ input[type="number"] {
   }
   &:focus {
     background-color: var(--sa-skyBlue);
-    color:#fff ;
+    color: #fff;
   }
   &:active {
     background-color: var(--sa-skyBlue) !important;
@@ -188,7 +188,7 @@ input[type="number"] {
 
 //New CSS
 
-$font-size: (10, 12,13, 14, 15, 16, 18, 20, 22, 24);
+$font-size: (10, 12, 13, 14, 15, 16, 18, 20, 22, 24);
 // Font Size
 @each $font in $font-size {
   .f-size-#{$font} {
