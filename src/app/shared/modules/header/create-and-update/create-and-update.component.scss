@@ -24,7 +24,7 @@
         
       }
       &.completed::before {
-        border-bottom: 2px solid #4bb543;
+        border-bottom: 2px solid var(--sa-primaryColor);
       }
   
       .step-counter {
@@ -44,12 +44,12 @@
   
         .step-counter {
           color: #fff;
-          background-color: #4bb543;
+          background-color: var(--sa-primaryColor);
         }
       }
   
       &.completed .step-counter {
-        background-color: #4bb543;
+        background-color: var(--sa-primaryColor);
       }
     }
   

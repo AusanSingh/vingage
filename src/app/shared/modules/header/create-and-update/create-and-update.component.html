@@ -13,15 +13,16 @@
         <div class="stepper-wrapper">
             <div class="stepper-item active">
                 <div class="step-counter"></div>
-                <div class="step-name">First</div>
+                <div class="step-name">One</div>
             </div>
             <div class="stepper-item" [ngClass]="{'completed': currentStep == 2}">
                 <div class="step-counter"></div>
-                <div class="step-name">Second</div>
+                <div class="step-name">Two</div>
             </div>
         </div>
         <!-- Create Template Form -->
-        <form [formGroup]="createTemplateForm" (ngSubmit)="createTemplate()" *ngIf="currentStep == 1">
+        <form [formGroup]="createTemplateForm" (ngSubmit)="createTemplate()" *ngIf="currentStep == 1"
+            autocomplete="off">
             <div class="mb-3">
                 <label for="name" class="form-label">Name</label>
                 <input type="text" class="form-control" formControlName="name" id="name" aria-describedby="name"
@@ -42,8 +43,8 @@
         <!-- Upload Video Form -->
         <form [formGroup]="uploadVideoForm" (ngSubmit)="getPresignedAndUploadVideo()" *ngIf="currentStep == 2">
             <div class="upload-box position-relative mb-3">
-                <label for="file" class="form-label btn btn-outline-primary" *ngIf="!selectedFile?.name">File
-                    Upload</label>
+                <label for="file" class="form-label btn btn-outline-primary" *ngIf="!selectedFile?.name">Upload
+                    Video</label>
                 <label class="form-label d-flex align-items-center" *ngIf="selectedFile?.name">
                     {{selectedFile?.name}}
                     <button type="button" (click)="resetFile(video)" class="btn-close close pull-right f-size-10 "
@@ -51,8 +52,8 @@
                         <span aria-hidden="true" class="visually-hidden">&times;</span>
                     </button>
                 </label>
-                <input class="position-absolute" #video hidden type="file" (change)="onFileChange($event)" id="file"
-                    formControlName="file">
+                <input class="position-absolute" #video hidden type="file" accept="video/mp4,video/x-m4v,video/*"
+                    (change)="onFileChange($event)" id="file" formControlName="file">
             </div>
             <div class="text-end mb-3">
                 <button type="submit" class="btn btn-primary" [disabled]="uploadVideoForm.invalid">Submit</button>

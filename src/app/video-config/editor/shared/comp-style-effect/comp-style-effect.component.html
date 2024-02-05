@@ -5,13 +5,13 @@
         <div class="row">
             <div class="col-6" *ngIf="config?.show_width">
                 <label>Width</label>
-                <input class="form-control form-control-sm mar-b-4" type="number" name="width" [(ngModel)]="element.width"
-                    appNumberOnly />
+                <input class="form-control form-control-sm mar-b-4" type="number" name="width"
+                    [(ngModel)]="element.width" appNumberOnly />
             </div>
             <div class="col-6" *ngIf="config?.show_height">
                 <label>Height</label>
-                <input class="form-control form-control-sm mar-b-4" type="number" name="height" [(ngModel)]="element.height"
-                    appNumberOnly />
+                <input class="form-control form-control-sm mar-b-4" type="number" name="height"
+                    [(ngModel)]="element.height" appNumberOnly />
             </div>
         </div>
     </div>
@@ -22,13 +22,14 @@
         <div class="row">
             <div class="col-12 mb-1" *ngIf="config?.show_font_family">
                 <label>Font Family</label>
-                <select name="" class="form-select form-select-sm" [(ngModel)]="element.font_family" disabled="">
+                <select name="fontfamily" class="form-select form-select-sm" [(ngModel)]="element.font_family"
+                    disabled="">
                     <option value="Open Sans">Open Sans</option>
                 </select>
             </div>
             <div class="col-6" *ngIf="config?.show_font_size">
                 <label>Font Size</label>
-                <input class="form-control form-control-sm mar-b-4" type="text" name="fontsize" disabled
+                <input class="form-control form-control-sm mar-b-4" type="number" name="fontsize"
                     [(ngModel)]="element.font_size" />
             </div>
             <div class="col-6" *ngIf="config?.show_font_style">
@@ -43,8 +44,8 @@
         <label class="light-grey">Colour</label>
         <div class="row d-flex align-items-center mb-3" *ngIf="config?.show_color">
             <div class="col-3">
-                <!-- <input class="form-control form-control-sm color-box" type="color" name="color" [(ngModel)]="element.color" /> -->
-                <span class="form-control form-control-sm color-box" [(colorPicker)]="element.color" [style.background]="element.color" [(ngModel)]="element.color" ></span>
+                <span class="form-control form-control-sm color-box" [(colorPicker)]="element.color"
+                    [style.background]="element.color"></span>
             </div>
             <div class="col-3 p-0 f-size-12">Text</div>
             <div class="col offset-4">
@@ -53,9 +54,9 @@
         </div>
         <div class="row d-flex align-items-center" *ngIf="config?.show_bg_color">
             <div class="col-3">
-                <!-- <input class="form-control form-control-sm color-box" type="color" name="background"
-                    [(ngModel)]="element.background" /> -->
-                <span class="form-control form-control-sm color-box" [(colorPicker)]="element.background" [style.background]="element.background" [(ngModel)]="element.background" ></span>
+
+                <span class="form-control form-control-sm color-box" [(colorPicker)]="element.background"
+                    [style.background]="element.background"></span>
             </div>
             <div class="col-3 p-0 f-size-12">Background</div>
             <div class="col offset-4">
@@ -69,7 +70,7 @@
     <label class="mb-3 f-size-14">Effects</label>
     <div class="mb-3">
         <label>Effect Style</label>
-        <select class="form-select form-select-sm" name="effectstyle" [(ngModel)]="element.effect">
+        <select class="form-select form-select-sm" [(ngModel)]="element.effect">
             <option value="" selected disabled>Select</option>
             <option *ngFor="let effect of video.allEffects">{{effect}}</option>
         </select>

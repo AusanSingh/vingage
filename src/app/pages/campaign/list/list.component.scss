@@ -1,0 +1,12 @@
+th {
+    font-weight: 600;
+    border-color: #f8faff;
+}
+td, th {
+    border: none;
+    padding: 14px 12px;
+}
+
+.table > tbody > tr:nth-of-type(odd) > *{
+    background-color: #f8faff;
+}

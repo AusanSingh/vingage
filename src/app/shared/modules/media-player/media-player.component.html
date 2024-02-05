@@ -1,0 +1,28 @@
+<div class="parent-div">
+    <div id="azuremediaplayer" class="azuremediaplayer amp-default-skin"></div>
+    <div id="canvas-wrapper">
+        <div #canvas class="canvas-container">
+            <ng-container *ngFor="let item of elements;let i = index">
+                <!-- cdkDragBoundary=".canvas-container" -->
+                <div *ngIf="(+item.config.duration.start <= +video.currentVideoTime && +video.currentVideoTime <= +item.config.duration.end)"
+                    class="overlay-content {{item.config.effect}}" id="{{i}}"
+                    [ngClass]="{'editor' : editor,'cursor-pointer': !editor && item.type =='button', 'active-element': (editor && activeEleId == item.id)}"
+                    [ngStyle]="{
+                        'left': item.config.position.x + 'px',
+                        'top': item.config.position.y + 'px',
+                        'color': item.config.color,
+                        'font-size': item.config.font_size + 'px',
+                        'width': item.config.width + 'px',
+                        'height': item.config.height + 'px',
+                        'font-family': item.config.font_family,
+                        'font-style': item.config.font_style,
+                        'background': item.config.background,
+                    }" cdkResize cdkDrag (cdkDragStarted)="startDragging($event,i)"
+                    (cdkDragEnded)="endDragging($event,i)" (click)="setElementForConfig(item)"
+                    [cdkDragDisabled]="!editor">
+                    {{item?.config.text}}
+                </div>
+            </ng-container>
+        </div>
+    </div>
+</div>

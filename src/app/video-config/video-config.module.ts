@@ -5,7 +5,7 @@ import { RightSidebarComponent } from './right-sidebar/right-sidebar.component';
 import { LeftSidebarComponent } from './left-sidebar/left-sidebar.component';
 import { RouterModule, Routes } from '@angular/router';
 import { VideoContModule } from './video-cont/video-cont.module';
-import { VideoConfigService } from './services/video-config.service';
+import { VideoConfigService } from 'src/app/shared/services/video-config.service';
 import { VideoConfigHeaderComponent } from './video-config-header/video-config-header.component';
 import { ButtonConfigurationsComponent } from './editor/button-configurations/button-configurations.component';
 import { TextConfigurationsComponent } from './editor/text-configurations/text-configurations.component';
@@ -14,6 +14,7 @@ import { NumberOnlyDirective } from './directives/number-only.directive';
 import { CompStyleEffectComponent } from './editor/shared/comp-style-effect/comp-style-effect.component';
 import { ColorPickerModule } from 'ngx-color-picker';
 import { ModalModule } from 'ngx-bootstrap/modal';
+import { LoaderModule } from '../shared/modules/loader/loader.module';
 
 
 let route: Routes = [
@@ -37,7 +38,8 @@ let route: Routes = [
     VideoContModule,
     FormsModule, //for template driven
     ModalModule.forRoot(),
-    ColorPickerModule
+    ColorPickerModule,
+    LoaderModule
   ],
   exports: [ColorPickerModule],
   providers: [VideoConfigService]

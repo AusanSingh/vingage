@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { MENU_LIST } from '../services/constant-data';
-import { VideoConfigService } from '../services/video-config.service';
+import { VideoConfigService } from 'src/app/shared/services/video-config.service';
 
 
 @Component({
@@ -24,7 +24,7 @@ export class LeftSidebarComponent {
     this.video.pauseVideo.next(true);
     setTimeout(() => {
       let val: any = this.video.$selectedElements.value;
-      elem["id"] = val.length;
+      elem["id"] = "" + val.length;
       this.setDuration(elem);
       val.push(JSON.parse(JSON.stringify(elem)));
       this.video.$selectedElements.next(val);
@@ -37,7 +37,7 @@ export class LeftSidebarComponent {
     if (End <= this.video.totalVideoDuration) {
       elem["config"]["duration"]["end"] = End;
     } else {
-      elem["config"]["duration"]["end"] = +this.video.totalVideoDuration;
+      elem["config"]["duration"]["end"] = this.video.totalVideoDuration ? +this.video.totalVideoDuration : End;
     }
   }
 

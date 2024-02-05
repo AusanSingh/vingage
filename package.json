@@ -4,13 +4,7 @@
   "scripts": {
     "ng": "ng",
     "dev": "ng serve",
-    "build-prod-in": "ng build",
-    "build-prod-indo": "ng build --configuration id",
-    "build-prod-us": "ng build --configuration us",
-    "build-prod-me": "ng build --configuration me",
-    "build-uat": "ng build --configuration uat",
-    "build-qa1": "ng build --configuration qa1",
-    "build-qa2": "ng build --configuration qa2",
+    "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },

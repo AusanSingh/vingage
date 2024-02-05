@@ -11,7 +11,7 @@ import { AuthenticationService } from 'src/app/shared/services/authentication.se
   templateUrl: './create-and-update.component.html',
   styleUrls: ['./create-and-update.component.scss']
 })
-export class CreateAndUpdateComponent implements OnInit{
+export class CreateAndUpdateComponent implements OnInit {
   createTemplateForm: FormGroup;
   uploadVideoForm: FormGroup;
   title?: string;
@@ -53,15 +53,13 @@ export class CreateAndUpdateComponent implements OnInit{
     this.auth.postRequest(url, data)
       .subscribe({
         next: (res) => {
-          console.log(res);
           this.currentTemplate = res;
-         
+
           this.toastr.success("Created Successfully!");
           this.currentStep = 2;
           this.isLoading = false;
         },
         error: (error) => {
-          console.log(error);
           this.isLoading = false;
         }
       })
@@ -70,7 +68,7 @@ export class CreateAndUpdateComponent implements OnInit{
   resetFile(file: HTMLInputElement) {
     file['value'] = '';
     file.dispatchEvent(new Event('change'));
-  } 
+  }
   selectedFile?: File;
   onFileChange(event: any) {
     this.selectedFile = (event.target as HTMLInputElement)?.files?.[0];
@@ -82,35 +80,34 @@ export class CreateAndUpdateComponent implements OnInit{
       "file_name": res.file_name,
     }
     this.auth.putRequest(`/api/v1/user/upload-template-status/${this.currentTemplate.template_id}`, payload)
-    .subscribe({
-      next: (res) => {
-        console.log(res)
-        this.bsModalRef.hide();
-        this.toastr.success("Video uploaded successfully.");
-        this.route.navigateByUrl('/video-config/'+this.currentTemplate.template_id);
-        this.isLoading = false;
-      },
-      error: () => {
-        this.isLoading = false;
-      }
-    })
-    
+      .subscribe({
+        next: (res) => {
+          this.bsModalRef.hide();
+          this.toastr.success("Video uploaded successfully.");
+          this.route.navigateByUrl('/video-config/' + this.currentTemplate.template_id);
+          this.isLoading = false;
+        },
+        error: () => {
+          this.isLoading = false;
+        }
+      })
+
   }
 
   uploadVideo(res: any) {
     this.http.put(res.url, this.selectedFile, this.auth.http_media_option)
-    .subscribe({
-      next: (presigned_res) => {
-        this.videoUploadStatus(res, 'success');
-      },
-      error: () => {
-        this.isLoading = false;
-      }
-    });
+      .subscribe({
+        next: (presigned_res) => {
+          this.videoUploadStatus(res, 'success');
+        },
+        error: () => {
+          this.isLoading = false;
+        }
+      });
   }
 
   getPresignedAndUploadVideo() {
-    if(!this.selectedFile) return;
+    if (!this.selectedFile) return;
     this.isLoading = true;
 
     let data = {
@@ -118,17 +115,14 @@ export class CreateAndUpdateComponent implements OnInit{
       "template_id": this.currentTemplate.template_id
     }
 
-    console.log(this.uploadVideoForm.value)
-
     this.auth.postRequest(`/api/v1/media/get_presigned_url`, data)
-    .subscribe({
-      next: (res) => {
-        console.log(res)
-        this.uploadVideo(res);
-      },
-      error: () => {
-        this.isLoading = false;
-      }
-    });
+      .subscribe({
+        next: (res) => {
+          this.uploadVideo(res);
+        },
+        error: () => {
+          this.isLoading = false;
+        }
+      });
   }
 }

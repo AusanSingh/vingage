@@ -1,13 +1,14 @@
+<app-loader *ngIf="isLoading"></app-loader>
 <div class="main-container">
     <div class="video-config-header box_shadow">
-        <app-video-config-header></app-video-config-header>
+        <app-video-config-header [templateData]="templateData"></app-video-config-header>
     </div>
     <div class="video-config-content">
         <div class="left-sidebar">
             <app-left-sidebar />
         </div>
         <div class="video-cont">
-            <app-video-cont></app-video-cont>
+            <app-video-cont [templateData]="templateData"></app-video-cont>
         </div>
         <div class="right-sidebar">
             <app-right-sidebar></app-right-sidebar>

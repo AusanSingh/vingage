@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { VideoConfigService } from '../services/video-config.service';
+import { VideoConfigService } from 'src/app/shared/services/video-config.service';
 
 @Component({
   selector: 'app-right-sidebar',
@@ -13,33 +13,34 @@ export class RightSidebarComponent {
   allElements: any;
   setElementDataForConfig: any;
   constructor(public video: VideoConfigService) {
-    video.$selectedElements.subscribe(elem => {
+    video.$selectedElements.subscribe((elem: any) => {
       this.allElements = elem;
-    })
+    });
+
     video.setElementDataForConfig.subscribe((data: any) => {
       this.setElementDataForConfig = data;
       this.element = data?.config;
       this.activeTabIndex = 1;
-    })
+    });
   }
 
-  activeTab(_Index: any) {
+  activeTab(_Index: number) {
     this.activeTabIndex = _Index;
   }
 
-  editElement(_Index: any) {
+  editElement(_Index: number) {
     this.video.pauseVideo.next(true);
-    let Ele = JSON.parse(JSON.stringify(this.allElements[_Index]));
+    let Ele = this.allElements[_Index];
     this.video.setElementDataForConfig.next(Ele);
+    this.video.playVideoAtSpecificTime.next(+Ele.config.duration.start);
     this.activeTabIndex = 1;
   }
 
-  deleteElement(_Index: any) {
+  deleteElement(index: number): void {
     this.video.pauseVideo.next(true);
-    let AllEle = JSON.parse(JSON.stringify(this.allElements));
-    AllEle.splice(_Index, 1);
-    this.video.$selectedElements.next(AllEle);
+    const allElementsCopy: any = JSON.parse(JSON.stringify(this.allElements));
+    allElementsCopy.splice(index, 1);
+    this.video.$selectedElements.next(allElementsCopy);
     this.video.setElementDataForConfig.next(null);
   }
-
 }

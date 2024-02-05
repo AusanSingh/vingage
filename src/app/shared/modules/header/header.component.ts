@@ -1,7 +1,8 @@
-import { Component,OnInit, TemplateRef } from '@angular/core';
+import { Component, OnInit, TemplateRef } from '@angular/core';
 import { AuthenticationService } from '../../services/authentication.service';
 import { BsModalRef, BsModalService, ModalOptions } from 'ngx-bootstrap/modal';
 import { CreateAndUpdateComponent } from './create-and-update/create-and-update.component';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -18,11 +19,12 @@ export class HeaderComponent implements OnInit {
   headTitle: string = '';
   userDropdown = []
   bsModalRef?: BsModalRef;
-  
+
   constructor(
     public auth: AuthenticationService,
-    private modalService: BsModalService
-  ){
+    private modalService: BsModalService,
+    private router: Router,
+  ) {
   }
 
   openModalWithComponent() {
@@ -36,36 +38,6 @@ export class HeaderComponent implements OnInit {
     this.bsModalRef.content.closeBtnName = 'Close';
   }
 
-
-  showSidebar() {
-    this.openSidebar = true;
-  }
-  circleNameFunc() {
-    let value = '';
-    if (this.user) value = this.user?.email;
-    if(!value) return;
-    let splits = value.split(" ");
-    splits = splits.filter(split => {
-      return split !== "";
-    });
-    if (splits.length > 0) {
-      if (splits.length === 1) this.circleName = splits[0][0];
-      else this.circleName = splits[0][0] + splits[1][0];
-    }
-  }
-  logout(event: any) {
-    event.preventDefault();
-    this.isLoading = true;
-    this.auth.logout();
-    this.isLoading = false;
-  }
-  ngOnInit(): void {
-    this.auth.$currentUser.subscribe(
-      (user: any) => {
-        if (user) this.user = user;
-        this.circleNameFunc();
-      }
-    )
-  }
+  ngOnInit(): void { }
 
 }

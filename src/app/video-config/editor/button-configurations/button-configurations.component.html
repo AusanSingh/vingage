@@ -11,26 +11,26 @@
         <div class="row">
             <div class="col-6">
                 <label>Start time</label>
-                <input class="form-control form-control-sm mar-b-4" type="number" name="starttime"
+                <input class="form-control form-control-sm mar-b-4" type="text" name="starttime1"
                     [(ngModel)]="element.duration.start" placeholder="Enter start time" appNumberOnly
                     [maxAllowedValue]="video.totalVideoDuration" />
             </div>
             <div class="col-6">
                 <label>End time</label>
-                <input class="form-control form-control-sm mar-b-4" type="number" name="endtime"
+                <input class="form-control form-control-sm mar-b-4" type="text" name="endtime1"
                     [(ngModel)]="element.duration.end" placeholder="Enter end time" appNumberOnly
                     [maxAllowedValue]="video.totalVideoDuration" />
             </div>
         </div>
     </div>
-    
+
     <div class="mb-3">
         <label class="light-grey">On click action</label>
         <div class="row">
             <div class="col-12 mb-3">
                 <label>Select Action</label>
                 <select class="form-select form-select-sm" name="action" [(ngModel)]="element.action">
-                    <option value="" selected disabled>Select</option>
+                    <option value="" selected>Select</option>
                     <option *ngFor="let action of actions" [ngValue]="action.value">{{action.key}}</option>
                 </select>
             </div>

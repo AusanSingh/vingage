@@ -1,3 +1,5 @@
+<app-loader *ngIf="isLoader"></app-loader>
+
 <div class="row">
     <div class="col-md-12 table_listing__container">
         <div class="mb-3">
@@ -7,28 +9,17 @@
         <ng-container *ngIf="templateList.length; else nodata">
             <div class="row">
                 <div class="col-md-3" *ngFor="let template of templateList">
-                    <div class="card box_shadow border-0 rounded-3 position-relative mb-3" >
-                        <div dropdown class="position-absolute card_dropdown"> 
-                            <button id="user-dropdown" dropdownToggle type="button" class="btn btn-primary  text-uppercase" aria-controls="user-dropdown-area"><div class="three-dots"><span></span><span></span><span></span></div>
-                                <span class="caret"></span>
-                            </button>
-                            <ul id="user-dropdown-area" *dropdownMenu class="dropdown-menu dropdown-menu-right border-0 p-0"
-                                role="menu" aria-labelledby="user-dropdown">
-                                <li role="menuitem f-size-14">
-                                  <a href="#" class="dropdown-item"><i class="icon-copy f-size-14"></i> Copy</a>
-                                  <a href="#" class="dropdown-item"><i class="icon-delete f-size-14"></i> Delete</a>
-                                </li>
-                            </ul>
-                          </div>
-
-
+                    <div class="card box_shadow border-0 rounded-3 position-relative mb-3">
+                        <a href="#" class="dropdown-item delete_button box_shadow"
+                            (click)="openModal($event, modal, template)"><i class="icon-delete f-size-14"></i></a>
                         <img class="card-img-top" src="assets/images/default_thumb.svg" alt="Card image cap">
                         <div class="card-body">
                             <h6 class="card-title text-700">{{template?.name}}</h6>
                             <p class="card-text">{{template.description}}</p>
-                            <div class="row">
-                                <div class="col-6"><a href="#" class="btn btn-outline-primary d-block">Preview</a> </div>
-                                <div class="col-6"><a href="#" class="btn btn-primary d-block"
+                            <div class="row no-gutter">
+                                <div class="col-6"><a href="#" class="btn btn-outline-primary d-block"
+                                        routerLink="/vingage/{{template.template_id}}">Preview</a> </div>
+                                <div class="col-6"><a href="#" class="btn btn-outline-primary d-block"
                                         routerLink="/video-config/{{template.template_id}}">Edit</a> </div>
                             </div>
                         </div>
@@ -37,12 +28,16 @@
             </div>
         </ng-container>
         <ng-template #nodata>
-            No data found!
+            <div class="d-flex justify-content-center mar-t-60 mar-b-40 align-items-center flex-column">
+                <img src="assets/images/no-template.svg">
+                <p class="f-size-18 mar-t-40">Let’s Kickstart Your Project -
+                    Create Your First Template Now!</p>
+            </div>
         </ng-template>
 
-        <ng-template #template>
+        <ng-template #modal>
             <div class="modal-body text-center">
-                <p>Are you sure you want to delete this channel?</p>
+                <p>Are you sure you want to delete this template?</p>
                 <button type="button" class="btn btn-default" (click)="deleteTemplate()">Yes</button>
                 <button type="button" class="btn btn-primary" (click)="decline()">No</button>
             </div>

@@ -4,13 +4,11 @@
             <ul>
                 <li class="mar-r-40" [ngClass]="{'active': activeTabIndex === 1}" (click)="activeTab(1)"
                     *ngIf="element">
-                    <a href="javascript:void(0)">
-                        Properties</a>
+                    <a href="javascript:void(0)">Properties</a>
                 </li>
                 <li [ngClass]="{'active': activeTabIndex === 2 || (allElements.length && !element)}"
                     (click)="activeTab(2)">
-                    <a href="javascript:void(0)"> All
-                        Elements({{allElements.length}})</a>
+                    <a href="javascript:void(0)"> All Elements({{allElements.length}})</a>
                 </li>
             </ul>
         </div>

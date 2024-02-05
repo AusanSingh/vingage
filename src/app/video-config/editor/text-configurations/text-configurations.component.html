@@ -4,13 +4,13 @@
         <label>Text Name</label>
         <input class="form-control form-control-sm mar-b-4" type="text" name="textname" [(ngModel)]="element.text"
             placeholder="Enter name" />
-        <span class="f-size-10">{{sublabel}}</span>
+        <span class="f-size-11">{{sublabel}}</span>
     </div>
     <div class="mb-3">
         <label>Select Action</label>
-        <select class="form-select form-select-sm" name="action" [(ngModel)]="element.action">
-            <option value="" selected disabled>Select</option>
-            <option *ngFor="let action of actions" [ngValue]="action.value">{{action.key}}</option>
+        <select class="form-select form-select-sm" [(ngModel)]="element.action">
+            <option value="" selected>Select</option>
+            <option *ngFor="let action of actions" value="{{action.value}}">{{action.key}}</option>
         </select>
     </div>
     <div class="mb-3">
@@ -18,14 +18,15 @@
         <div class="row">
             <div class="col-6">
                 <label>Start time</label>
-                <input class="form-control form-control-sm mar-b-4" type="number" name="starttime"
+                <input class="form-control form-control-sm mar-b-4" type="text" name="starttime"
                     [(ngModel)]="element.duration.start" placeholder="Enter start time" appNumberOnly
                     [maxAllowedValue]="video.totalVideoDuration" />
             </div>
             <div class="col-6">
                 <label>End time</label>
-                <input class="form-control form-control-sm mar-b-4" type="number" name="endtime" [(ngModel)]="element.duration.end"
-                    placeholder="Enter end time" appNumberOnly [maxAllowedValue]="video.totalVideoDuration" />
+                <input class="form-control form-control-sm mar-b-4" type="text" name="endtime"
+                    [(ngModel)]="element.duration.end" placeholder="Enter end time" appNumberOnly
+                    [maxAllowedValue]="video.totalVideoDuration" />
             </div>
         </div>
     </div>

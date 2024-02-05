@@ -25,9 +25,11 @@ export class NumberOnlyDirective {
     inputValue = inputValue.replace(/[^0-9]/g, '');
     // Limit to the maximum allowed value
     if (!isNaN(this.maxAllowedValue) && +inputValue > this.maxAllowedValue) {
-      inputValue = this.maxAllowedValue.toString();
+      inputValue = +this.maxAllowedValue;
     }
-    // Update ngModel value
-    this.ngModel.update.emit(inputValue);
+    setTimeout(() => {
+      // Update ngModel value
+      this.ngModel.update.emit(inputValue ? +inputValue : inputValue);
+    })
   }
 }

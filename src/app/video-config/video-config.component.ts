@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
-import { VideoConfigService } from './services/video-config.service';
+import { ActivatedRoute, Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
+import { VideoConfigService } from 'src/app/shared/services/video-config.service';
+import { AuthenticationService } from '../shared/services/authentication.service';
 
 @Component({
   selector: 'app-video-config',
@@ -8,16 +11,43 @@ import { VideoConfigService } from './services/video-config.service';
 })
 export class VideoConfigComponent {
 
-  constructor(private video: VideoConfigService) { }
+  templateData: any;
+  isLoading = false;
+
+  constructor(
+    private video: VideoConfigService,
+    private _activatedRoute: ActivatedRoute,
+    private router: Router,
+    public auth: AuthenticationService,
+    private toastr: ToastrService) { }
+
+  ngOnInit() {
+    let TemplateId = this._activatedRoute.snapshot.params['template-id'];
+    if (!TemplateId) {
+      this.router.navigate(['/template/list']);
+    }
+    this.getTemplateData(TemplateId);
+  }
 
   ngOnDestroy() {
-    console.log('>>>>Destroy triggered')
     this.video.$selectedElements.next([]);
-    // this.video.$selectedElements.unsubscribe();
-    // this.video.setElementDataForConfig.unsubscribe();
-    // this.video.slctdEvent.unsubscribe();
-    // this.video.pauseVideo.unsubscribe();
-    // this.video.playVideoAtSpecificTime.unsubscribe();
+  }
+
+  getTemplateData(TemplateId: any) {
+    this.isLoading = true;
+    this.auth.getRequest(`/api/v1/user/template-info/${TemplateId}/`)
+      .subscribe({
+        next: (res: any) => {
+          if (res) {
+            this.isLoading = false;
+            this.templateData = res;
+            this.video.$selectedElements.next(this.templateData.meta_data);
+          }
+        },
+        error: (err) => {
+          this.isLoading = false;
+        }
+      })
   }
 
 }

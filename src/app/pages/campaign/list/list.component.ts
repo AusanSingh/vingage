@@ -11,8 +11,7 @@ import { BsModalService, BsModalRef } from 'ngx-bootstrap/modal';
 export class ListComponent {
   campaignList: any[] = [];
   modalRef?: BsModalRef;
-  currentChannel: any = '';
-  user: any;
+  currentChannel: any = null;
 
   constructor(
     private auth: AuthenticationService,
@@ -22,8 +21,8 @@ export class ListComponent {
 
   ngOnInit() {
     this.getList();
-    this.auth.$currentUser.subscribe(res => this.user = res);
   }
+
   openModal(e: any, template: TemplateRef<any>, channel: any) {
     e.preventDefault();
     this.currentChannel = channel;
@@ -86,7 +85,6 @@ export class ListComponent {
     this.auth.deleteRequest(`/api/v1/channel/?id=${this.currentChannel?.id}`)
       .subscribe({
         next: (res) => {
-          console.log(res)
           this.modalRef?.hide();
           this.campaignList = this.campaignList.filter(item => item !== this.currentChannel);
           this.toastr.success('Deleted successfully!')

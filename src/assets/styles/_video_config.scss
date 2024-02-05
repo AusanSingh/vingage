@@ -1,0 +1,9 @@
+.form-control,
+.form-select {
+  border-color: #282c34;
+  background-color: #333435;
+  color: #ffffff;
+  &::placeholder {
+    color: rgba($color: #fff, $alpha: 0.5);
+  }
+}

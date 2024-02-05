@@ -2,15 +2,12 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  .go-back {
-  }
   .template-name {
+    font-weight: 500;
   }
   .template-btn {
     .btn {
-      height: 32px;
       width: 82px;
-      padding: 0;
     }
   }
   .mgn-r-12 {

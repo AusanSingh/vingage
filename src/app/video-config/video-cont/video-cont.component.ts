@@ -1,5 +1,5 @@
-import { Component, ViewChild, ElementRef, AfterViewInit, ViewEncapsulation } from '@angular/core';
-import { VideoConfigService } from '../services/video-config.service';
+import { Component, Input, ViewEncapsulation } from '@angular/core';
+import { VideoConfigService } from 'src/app/shared/services/video-config.service';
 
 @Component({
   selector: 'app-video-cont',
@@ -9,6 +9,7 @@ import { VideoConfigService } from '../services/video-config.service';
 })
 export class VideoContComponent {
   slctdEvent: any;
+  @Input() templateData: any;
 
   constructor(private video: VideoConfigService) {
     video.slctdEvent.subscribe(res => {

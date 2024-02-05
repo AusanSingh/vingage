@@ -1,32 +1,22 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { AccountComponent } from './account.component';
-import { RouterModule, Routes } from '@angular/router';
-import { LoginComponent } from './components/login/login.component';
-import { FormsModule } from '@angular/forms';
+import { LoginComponent } from './login/login.component';
+import { Routes, RouterModule } from '@angular/router';
 
-
-const routes: Routes = [
-    {
-      path:'',
-      component: AccountComponent,
-      children:[
-        { path:'', redirectTo: '/account/login', pathMatch:'full'},
-        { path:'login', component: LoginComponent }
-      ]
-    },
-  ]
-  
+let route: Routes = [
+  { path: '', redirectTo: 'login', pathMatch: 'full' },
+  { path: 'login', component: LoginComponent, pathMatch: 'full' }
+]
 
 @NgModule({
   declarations: [
     AccountComponent,
-    LoginComponent,
+    LoginComponent
   ],
   imports: [
     CommonModule,
-    RouterModule.forChild(routes),
-    FormsModule
+    RouterModule.forChild(route),
   ]
 })
 export class AccountModule { }
